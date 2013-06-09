@@ -23,6 +23,7 @@
 # Copyright (c) 1989, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright (c) 2012 by Delphix. All rights reserved.
 # Copyright (c) 2012, Joyent, Inc. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 
 include ../Makefile.master
 
@@ -75,6 +76,7 @@ SUBDIRS += \
 	libresolv2		.WAIT	\
 	libw			.WAIT	\
 	libintl			.WAIT	\
+	libiconv		\
 	../cmd/sgs/librtld_db	\
 	libaio			\
 	libast			\

@@ -1,0 +1,72 @@
+#
+# CDDL HEADER START
+#
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License (the "License").
+# You may not use this file except in compliance with the License.
+#
+# You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+# or http://www.opensolaris.org/os/licensing.
+# See the License for the specific language governing permissions
+# and limitations under the License.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+# If applicable, add the following below this CDDL HEADER, with the
+# fields enclosed by brackets "[]" replaced with your own identifying
+# information: Portions Copyright [yyyy] [name of copyright owner]
+#
+# CDDL HEADER END
+#
+#
+# Copyright (c) 2006, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont. All rights reserved.
+#
+
+$mapfile_version 2
+
+# Mnemonic conditional input identifiers:
+#
+# - amd64, i386, sparc32, sparcv9: Correspond to ISA subdirectories used to
+#	hold per-platform code. Note however that we use 'sparc32' instead of
+#	'sparc'. Since '_sparc' is predefined to apply to, all sparc platforms,
+#	naming the 32-bit version 'sparc' would be too likely to cause errors.
+#
+# -	lf64: Defined on platforms that offer the 32-bit largefile APIs
+#
+$if _ELF32
+$add lf64
+$endif
+$if _sparc && _ELF32
+$add sparc32
+$endif
+$if _sparc && _ELF64
+$add sparcv9
+$endif
+$if _x86 && _ELF32
+$add i386
+$endif
+$if _x86 && _ELF64
+$add amd64
+$endif
+
+SYMBOL_VERSION STORMOS_0.1 {
+    global:
+$if _ELF32
+	iconv		{ TYPE = FUNCTION; FILTER = /usr/lib/libc.so.1 };
+	iconv_open	{ TYPE = FUNCTION; FILTER = /usr/lib/libc.so.1 };
+	iconv_close	{ TYPE = FUNCTION; FILTER = /usr/lib/libc.so.1 };
+$elif sparcv9
+	iconv		{ TYPE = FUNCTION; FILTER = /usr/lib/sparcv9/libc.so.1 };
+	iconv_open	{ TYPE = FUNCTION; FILTER = /usr/lib/sparcv9/libc.so.1 };
+	iconv_close	{ TYPE = FUNCTION; FILTER = /usr/lib/sparcv9/libc.so.1 };
+$elif amd64
+	iconv		{ TYPE = FUNCTION; FILTER = /usr/lib/amd64/libc.so.1 };
+	iconv_open	{ TYPE = FUNCTION; FILTER = /usr/lib/amd64/libc.so.1 };
+	iconv_close	{ TYPE = FUNCTION; FILTER = /usr/lib/amd64/libc.so.1 };
+$else
+$error unknown platform
+$endif
+    local:
+	*;
+};
