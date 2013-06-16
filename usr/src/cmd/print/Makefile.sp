@@ -22,6 +22,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/print/Makefile.sp
 # Common makefile definitions (should be) used by all print(lp) makefiles
@@ -49,8 +50,6 @@ ROOTLIBLPPOST =	$(ROOTLIBLP)/postscript
 ROOTLOCALLP=	$(ROOTLIBLP)/local
 ROOTLIBPRINT=	$(ROOTLIB)/print
 ROOTLIBPRINTBIN=	$(ROOTLIBPRINT)/bin
-
-ROOTUSRUCB=	$(ROOT)/usr/ucb
 
 
 #
@@ -90,7 +89,6 @@ _msg	:=TARGET= _msg
 ROOTLIBLPPROG=	$(PROG:%=$(ROOTLIBLP)/%)
 ROOTBINLPPROG=	$(PROG:%=$(ROOTBINLP)/%)
 ROOTETCLPPROG=	$(PROG:%=$(ROOTETCLP)/%)
-ROOTUSRUCBPROG=	$(PROG:%=$(ROOTUSRUCB)/%)
 ROOTLOCALLPPROG=	$(PROG:%=$(ROOTLOCALLP)/%)
 ROOTLIBLPPOSTPROG=	$(PROG:%=$(ROOTLIBLPPOST)/%)
 ROOTLIBPRINTPROG=	$(PROG:%=$(ROOTLIBPRINT)/%)
@@ -98,7 +96,6 @@ ROOTLIBPRINTPROG=	$(PROG:%=$(ROOTLIBPRINT)/%)
 $(ROOTLIBLP)/%	\
 $(ROOTBINLP)/%	\
 $(ROOTETCLP)/%	\
-$(ROOTUSRUCB)/%	\
 $(ROOTLOCALLP)/% \
 $(ROOTLIBLPPOST)/% \
 $(ROOTLIBPRINT)/% :	%

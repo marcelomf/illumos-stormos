@@ -10,6 +10,7 @@
 #
 
 # Copyright 2011, Richard Lowe
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 
 SUBDIRS=man1		\
 	man1b		\
@@ -45,7 +46,6 @@ SUBDIRS=man1		\
 	man3ldap	\
 	man3lgrp	\
 	man3lib		\
-	man3libucb	\
 	man3mail	\
 	man3malloc	\
 	man3mp		\
@@ -75,7 +75,6 @@ SUBDIRS=man1		\
 	man3tecla	\
 	man3tnf		\
 	man3tsol	\
-	man3ucb		\
 	man3uuid	\
 	man3volmgt	\
 	man3xcurses	\

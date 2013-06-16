@@ -35,7 +35,7 @@ include Makefile.master
 # it defines TARGETDIRS and ROOTDIRS.
 include Targetdirs
 
-COMMON_SUBDIRS=	uts lib cmd ucblib ucbcmd psm man test
+COMMON_SUBDIRS=	uts lib cmd psm man test
 sparc_SUBDIRS= stand
 i386_SUBDIRS= grub
 
@@ -66,7 +66,7 @@ PARALLEL_DIRS = uts lib man
 # The check target also causes smf(5) service manifests to be validated.
 CHKMFSTSUBDIRS=	cmd
 
-MSGSUBDIRS=	cmd ucbcmd lib
+MSGSUBDIRS=	cmd lib
 DOMAINS= \
 	SUNW_OST_ADMIN \
 	SUNW_OST_NETRPC \
@@ -221,8 +221,8 @@ check:	$(CHKHDRSUBDIRS) $(CHKMFSTSUBDIRS)
 #
 $(CLOSED_BUILD)XRDIRS += ../closed
 XRPRUNE = prototypes xmod
-XRINCDIRS = uts/common head ucbhead
-$(CLOSED_BUILD)XRINCDIRS = uts/common ../closed/uts/common head ucbhead
+XRINCDIRS = uts/common head 
+$(CLOSED_BUILD)XRINCDIRS = uts/common ../closed/uts/common head 
 
 cscope.out tags: FRC
 	$(XREF) -f -x $@

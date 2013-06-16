@@ -28,6 +28,8 @@
 # Copyright (c) 1984, 1986, 1987, 1988, 1989 AT&T
 # All Rights Reserved
 #
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+#
 # cmd/lp/cmd/lptest/Makefile
 #
 
@@ -35,7 +37,6 @@ include 	../../Makefile.lp
 
 PROG=		lptest
 
-ROOTUSRUCBSYMLINK=	$(ROOTUSRUCB)/$(PROG)
 ROOTUSRBINPROG=		$(PROG:%=$(ROOTBIN)/%)
 
 SRCS= 		lptest.c
@@ -51,10 +52,7 @@ POFILE=		lp_cmd_lptest.po
 
 all:		$(PROG)
 
-install:	all .WAIT $(ROOTUSRBINPROG) $(ROOTUSRUCBSYMLINK)
-
-$(ROOTUSRUCBSYMLINK):	
-		$(RM) $@; $(SYMLINK) ../bin/$(PROG) $@
+install:	all .WAIT $(ROOTUSRBINPROG)
 
 clean:
 		$(RM) $(OBJS)

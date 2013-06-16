@@ -21,13 +21,13 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 #
 
 include		../Makefile.sp
 
-UCBPROGS =	lpr lpq lprm lpc
-BINPROGS =	lp lpstat cancel enable disable $(UCBPROGS)
+BINPROGS =	lp lpstat cancel enable disable lpr lpq lprm lpc
 SBINPROGS =	accept reject lpmove
 
 LIBPRINTPROGS =	in.lpd
@@ -74,16 +74,8 @@ $(BINPROGS) $(SBINPROGS) $(LIBPRINTPROGS):	$(BINPROGS:%=%.c) $(SBINPROGS:%=%.c) 
 	$(LINK.c) -o $@ $@.c common.o $(LDLIBS)
 	$(POST_PROCESS)
 
-#	ucb links (lptest is handled in usr/src/cmd/lp/cmd/Makefile)
-ROOTUSRUCB =		$(ROOT)/usr/ucb
-ROOTUCBSYMLINKS =	$(UCBPROGS:%=$(ROOTUSRUCB)/%)
-$(ROOTUSRUCB)/%:	$(ROOTUSRUCB) %
-
 $(ROOTLIBLPBIN)/%:	%
 	$(INS.file)
-
-$(ROOTUCBSYMLINKS):	
-	$(RM) $@; $(SYMLINK) ../bin/$(@F) $@
 
 #	usr/lib links
 ROOTUSRLIBSYMLINKS =	$(SBINPROGS:%=$(ROOTLIB)/%)
@@ -96,7 +88,7 @@ $(ROOTUSRLIBSYMLINKS):
 
 install:	$(ROOTLIBLPPROGS) \
 		$(ROOTLIBPRINT) $(ROOTLIBPRINTPROGS) $(ROOTMANIFEST) \
-		$(ROOTUCBSYMLINKS) $(ROOTUSRLIBSYMLINKS)
+		$(ROOTUSRLIBSYMLINKS)
 
 check:	$(CHKMANIFEST)
 

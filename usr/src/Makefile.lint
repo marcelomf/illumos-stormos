@@ -21,6 +21,7 @@
 
 # Copyright (c) 2003, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright (c) 2012 by Delphix. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 
 # include global definitions
 include Makefile.master
@@ -469,17 +470,7 @@ COMMON_SUBDIRS = \
 	lib/udapl \
 	lib/watchmalloc \
 	psm \
-	test \
-	ucbcmd/basename \
-	ucbcmd/biff \
-	ucbcmd/echo \
-	ucbcmd/groups \
-	ucbcmd/mkstr \
-	ucbcmd/printenv \
-	ucbcmd/sum \
-	ucbcmd/test \
-	ucbcmd/users \
-	ucbcmd/whoami
+	test
 
 i386_SUBDIRS= \
 	cmd/acpihpd \
