@@ -24,6 +24,7 @@
 # Copyright 2011 Joyent, Inc.  All rights reserved.
 # Copyright (c) 2012 by Delphix. All rights reserved.
 # Copyright (c) 2013 DEY Storage Systems, Inc. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 
 include ../Makefile.master
 
@@ -202,7 +203,6 @@ COMMON_SUBDIRS=		\
 	infocmp		\
 	init		\
 	initpkg		\
-	install.d	\
 	intrd		\
 	intrstat	\
 	ipcrm		\

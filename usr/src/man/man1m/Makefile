@@ -12,6 +12,7 @@
 #
 # Copyright 2011, Richard Lowe
 # Copyright 2012 Nexenta Systems, Inc. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include ../../Makefile.master
@@ -229,7 +230,6 @@ COMMON_MANFILES = 	6to4relay.1m		\
 	 	 	infocmp.1m		\
 	 	 	init.1m			\
 	 	 	inityp2l.1m		\
-	 	 	install.1m		\
 	 	 	installf.1m		\
 	 	 	installgrub.1m		\
 	 	 	intrd.1m		\
