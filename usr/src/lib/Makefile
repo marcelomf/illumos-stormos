@@ -19,7 +19,7 @@
 # CDDL HEADER END
 #
 
-# Copyright 2011 Nexenta Systems, Inc.  All rights reserved.
+# Copyright 2013 Nexenta Systems, Inc.  All rights reserved.
 # Copyright (c) 1989, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright (c) 2012 by Delphix. All rights reserved.
 # Copyright (c) 2012, Joyent, Inc. All rights reserved.
@@ -242,10 +242,7 @@ SUBDIRS += \
 	libzfs_core	\
 	libzfs		\
 	libbe		\
-	pylibbe		\
 	libzfs_jni	\
-	pyzfs		\
-	pysolaris	\
 	libmapid	\
 	brand		\
 	policykit	\
@@ -368,8 +365,6 @@ MSGSUBDIRS=		\
 	madv		\
 	mpss		\
 	pam_modules	\
-	pyzfs		\
-	pysolaris	\
 	rpcsec_gss	\
 	libreparse
 MSGSUBDIRS += \
@@ -671,9 +666,6 @@ sun_fc:		libdevinfo libsysevent libnvpair
 libsun_ima:	libdevinfo libsysevent libnsl
 sun_sas:	libdevinfo libsysevent libnvpair libkstat libdevid
 libgrubmgmt:	libdevinfo libzfs libfstyp
-pylibbe: 	libbe libzfs
-pyzfs:		libnvpair libzfs
-pysolaris:	libsec libidmap
 libreparse:	libnvpair
 libhotplug:	libnvpair
 cfgadm_plugins:	libhotplug
