@@ -21,25 +21,22 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/print/Makefile
 #
 
 include ../Makefile.cmd
 
-JAVA_SUBDIRS = printmgr
-
-PRINT_SUBDIRS  =		\
-		scripts		\
-		lpget		\
-		lpset		\
-		conv_fix	\
-		printer-info	\
-		ppdmgr		\
-		selector	\
-		bsd-sysv-commands
+SUBDIRS =		\
+	scripts		\
+	lpget		\
+	lpset		\
+	conv_fix	\
+	printer-info	\
+	ppdmgr		\
+	selector	\
+	bsd-sysv-commands
 
 SUBDIRS = $(PRINT_SUBDIRS) $(JAVA_SUBDIRS)
 
@@ -68,11 +65,11 @@ all install:	$(ROOTDIRS) $(SUBDIRS)
 # cmd/lp. Using the _msg rule defined in Makefile.cmd would 
 # result in clobbering the cmd/lp message files.
 # To get around this we will define one message file "print.po"
-# for these commands (except java printmgr). To build
-# this file we find all of the .c files and run xgettext on them.
-# Then concatenate this with the scripts.po file.
+# for these commands. To build this file we find all of the .c
+# files and run xgettext on them. Then concatenate this with the
+# scripts.po file.
 #
-_msg:   $(MSGDOMAIN) scripts $(JAVA_SUBDIRS)
+_msg:   $(MSGDOMAIN) scripts
 	@$(RM)	$(POFILE)
 	$(XGETTEXT) -s `/bin/find . -type d -name SCCS -prune -o -type f -name '*.c' -print`
 	@/bin/cat messages.po scripts/scripts.po | sed '/domain/d' > $(POFILE)

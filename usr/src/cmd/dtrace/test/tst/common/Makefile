@@ -28,6 +28,10 @@
 # Copyright (c) 2012 by Delphix. All rights reserved.
 #
 
+#
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+#
+
 include $(SRC)/Makefile.master
 include ../Makefile.com
 
@@ -113,5 +117,4 @@ usdt/tst.lazyprobe.o: usdt/lazyprobe.h
 usdt/lazyprobe.h: usdt/lazyprobe.d
 	$(DTRACE) -h -s usdt/lazyprobe.d -o usdt/lazyprobe.h
 
-SUBDIRS = java_api
 include ../../Makefile.subdirs

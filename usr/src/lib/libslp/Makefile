@@ -21,13 +21,12 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include $(SRC)/Makefile.master
 
-SLP_COMPONENTS= javalib etc
+SLP_COMPONENTS= etc
 SUBDIRS =	$(SLP_COMPONENTS) $(MACH)
 $(BUILD64)SUBDIRS += $(MACH64)
 

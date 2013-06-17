@@ -88,7 +88,6 @@ SUBDIRS += \
 	libadm			\
 	libctf			\
 	libdtrace		\
-	libdtrace_jni		\
 	libcurses		\
 	libtermcap		\
 	libgen			\
@@ -167,7 +166,6 @@ SUBDIRS += \
 	passwdutil	\
 	pam_modules	\
 	crypt_modules	\
-	libadt_jni	\
 	abi		\
 	auditd_plugins	\
 	libvolmgt	\
@@ -242,7 +240,6 @@ SUBDIRS += \
 	libzfs_core	\
 	libzfs		\
 	libbe		\
-	libzfs_jni	\
 	libmapid	\
 	brand		\
 	policykit	\
@@ -405,7 +402,6 @@ HDRSUBDIRS=		\
 	libdns_sd	\
 	libdscfg	\
 	libdtrace	\
-	libdtrace_jni	\
 	libelfsign	\
 	libeti		\
 	libfru		\
@@ -478,7 +474,6 @@ HDRSUBDIRS=		\
 	libxcurses2	\
 	libzfs		\
 	libzfs_core	\
-	libzfs_jni	\
 	libzoneinfo	\
 	libzonestat	\
 	hal		\
@@ -568,7 +563,6 @@ _dc:			$(DCSUBDIRS:%=%-nodepend)
 #
 auditd_plugins: libbsm libnsl libsecdb
 gss_mechs/mech_krb5:	libgss libnsl libsocket libresolv pkcs11
-libadt_jni:	libbsm
 libast: 	libsocket
 libadutils: 	libldap5 libresolv libsocket libnsl
 nsswitch:	libadutils libidmap
@@ -589,7 +583,6 @@ libdlpi:	libinetutil libdladm
 libds:		libsysevent
 libdscfg:	libnsctl libunistat libsocket libnsl
 libdtrace:	libproc libgen libctf
-libdtrace_jni:	libuutil libdtrace
 libefi:		libuuid
 libfstyp:	libnvpair
 libelfsign:	libcryptoutil libkmf
@@ -646,7 +639,6 @@ udapl/udapl_tavor:	udapl/libdat
 libzfs:		libdevid libgen libnvpair libuutil \
 		libadm libavl libefi libidmap libmd libzfs_core
 libzfs_core:	libnvpair
-libzfs_jni:	libdiskmgt libnvpair libzfs
 libzpool:	libavl libumem libnvpair libcmdutils
 libsec:		libavl libidmap
 brand:		libc libsocket

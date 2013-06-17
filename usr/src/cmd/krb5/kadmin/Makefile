@@ -20,15 +20,13 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/krb5/kadmin/Makefile
 
 include ../../Makefile.cmd
 
 SUBDIRS= cli dbutil ktutil kpasswd server kclient kdcmgr
-# EXPORT DELETE START
-SUBDIRS += gui
-# EXPORT DELETE END
 
 all :=		TARGET= all
 clean :=	TARGET= clean
@@ -56,13 +54,3 @@ $(SUBDIRS):	FRC
 	@cd $@; pwd; $(MAKE) $(TARGET)
 
 FRC:
-
-# EXPORT DELETE START
-EXPORT_SRC:
-	$(RM) -r gui
-	$(RM) Makefile+
-	$(SED) -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d" \
-                < Makefile > Makefile+
-	$(MV) Makefile+ Makefile
-	$(CHMOD) 444 Makefile
-# EXPORT DELETE END

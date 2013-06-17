@@ -22,10 +22,10 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
-#ident	"%Z%%M%	%I%	%E% SMI"
 
 include $(SRC)/Makefile.master
 
-SUBDIRS = scripts baddof badioctl chkargs jdtrace
+SUBDIRS = scripts baddof badioctl chkargs
 include ../Makefile.subdirs
