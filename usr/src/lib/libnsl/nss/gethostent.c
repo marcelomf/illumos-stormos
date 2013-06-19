@@ -24,6 +24,8 @@
  * Use is subject to license terms.
  */
 
+/* Copyright (c) 2013 Andrew Stormont.  All rights reserved. */
+
 /*
  * Ye olde non-reentrant interface (MT-unsafe, caveat utor)
  */
@@ -68,6 +70,17 @@ gethostbyname(const char *nam)
 	if ((b = GETBUF()) == 0)
 		return (NULL);
 	return (gethostbyname_r(nam, b->result, b->buffer, b->buflen,
+		    &h_errno));
+}
+
+struct hostent *
+gethostbyname2(const char *nam, int af)
+{
+	nss_XbyY_buf_t  *b;
+
+	if ((b = GETBUF()) == 0)
+		return (NULL);
+	return (gethostbyname2_r(nam, af, b->result, b->buffer, b->buflen,
 		    &h_errno));
 }
 

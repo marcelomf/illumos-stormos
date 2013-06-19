@@ -24,6 +24,8 @@
  * Use is subject to license terms.
  */
 
+/* Copyright (c) 2013 Andrew Stormont.  All rights reserved. */
+
 #pragma ident	"%Z%%M%	%I%	%E% SMI"
 
 /*
@@ -97,12 +99,24 @@ gethostbyname_r(const char *nam, struct hostent *result, char *buffer,
 	int buflen, int *h_errnop);
 
 extern struct hostent *
+gethostbyname2_r(const char *nam, int af, struct hostent *result,
+	char *buffer, int buflen, int *h_errnop);
+
+extern struct hostent *
 gethostbyaddr_r(const char *addr, int length, int type,
 	struct hostent *result, char *buffer, int buflen, int *h_errnop);
 
 struct hostent *
 gethostbyname_r(const char *nam, struct hostent *result, char *buffer,
 	int buflen, int *h_errnop)
+{
+	return gethostbyname2_r(nam, AF_INET, result, buffer, buflen,
+				h_errnop);
+}
+
+struct hostent *
+gethostbyname2_r(const char *nam, int af, struct hostent *result,
+	char *buffer, int buflen, int *h_errnop)
 {
 	struct netconfig *nconf;
 	struct	nss_netdirbyname_in nssin;
@@ -123,7 +137,18 @@ gethostbyname_r(const char *nam, struct hostent *result, char *buffer,
 		return (NULL);
 	}
 
-	nssin.op_t = NSS_HOST;
+	switch (af) {
+		case AF_INET:
+			nssin.op_t = NSS_HOST;
+			break;
+		case AF_INET6:
+			nssin.op_t = NSS_HOST6;
+			break;
+		default:
+			*h_errnop = HOST_NOT_FOUND;
+			return (NULL);
+	}
+
 	nssin.arg.nss.host.name = nam;
 	nssin.arg.nss.host.buf = buffer;
 	nssin.arg.nss.host.buflen = buflen;

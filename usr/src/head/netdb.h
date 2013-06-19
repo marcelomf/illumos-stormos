@@ -62,6 +62,8 @@
  * End BIND 4.9.3
  */
 
+/* Copyright (c) 2013 Andrew Stormont.  All rights reserved. */
+
 /*
  * Structures returned by network data base library.
  * All addresses are supplied in host order, and
@@ -233,6 +235,8 @@ struct	servent {
 #if !defined(_XPG4_2) || defined(__EXTENSIONS__)
 struct hostent	*gethostbyname_r
 	(const char *, struct hostent *, char *, int, int *h_errnop);
+struct hostent	*gethostbyname2_r
+	(const char *, int, struct hostent *, char *, int, int *h_errnop);
 struct hostent	*gethostbyaddr_r
 	(const char *, int, int, struct hostent *, char *, int, int *h_errnop);
 struct hostent	*getipnodebyname(const char *, int, int, int *);
@@ -263,6 +267,7 @@ int innetgr(const char *, const char *, const char *, const char *);
 
 /* Old interfaces that return a pointer to a static area;  MT-unsafe */
 struct hostent	*gethostbyname(const char *);
+struct hostent	*gethostbyname2(const char *, int);
 struct hostent	*gethostent(void);
 struct netent	*getnetbyaddr(in_addr_t, int);
 struct netent	*getnetbyname(const char *);
@@ -339,7 +344,6 @@ int rexec_af(char **, unsigned short,
 int rresvport(int *);
 int ruserok(const char *, int, const char *, const char *);
 /* BIND */
-struct hostent	*gethostbyname2(const char *, int);
 void		herror(const char *);
 const char	*hstrerror(int);
 /* End BIND */
@@ -355,6 +359,7 @@ void freeipsecalgent(struct ipsecalgent *ptr);
 #endif /* !defined(_XPG4_2) || defined(__EXTENSIONS__) */
 #else	/* __STDC__ */
 struct hostent	*gethostbyname_r();
+struct hostent	*gethostbyname2_r();
 struct hostent	*gethostbyaddr_r();
 struct hostent	*getipnodebyname();
 struct hostent	*getipnodebyaddr();
@@ -374,6 +379,7 @@ int		 innetgr();
 
 /* Old interfaces that return a pointer to a static area;  MT-unsafe */
 struct hostent	*gethostbyname();
+struct hostent	*gethostbyname2();
 struct hostent	*gethostbyaddr();
 struct hostent	*gethostent();
 struct netent	*getnetbyname();
@@ -406,7 +412,6 @@ int rresvport_af();
 int rresvport_addr();
 int ruserok();
 /* BIND */
-struct hostent	*gethostbyname2();
 void		herror();
 char		*hstrerror();
 /* IPv6 prototype definitons */
