@@ -20,6 +20,7 @@
 #
 #
 # Copyright (c) 2004, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include ../../Makefile.cmd
@@ -130,8 +131,7 @@ HTMLFILES = index.html
 
 DEMOFILES = \
 	$(DFILES) \
-	$(HTMLFILES) \
-	sunlogo.gif
+	$(HTMLFILES)
 
 MKDEMO	= mkdemo
 CLEANFILES += $(DFILES) $(MKDEMO)
