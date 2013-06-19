@@ -25,6 +25,7 @@
 # Copyright (c) 2012 by Delphix. All rights reserved.
 # Copyright (c) 2013 DEY Storage Systems, Inc. All rights reserved.
 # Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+# Copyright 2013 Johann 'Myrkraverk' Oskarsson <johann@myrkraverk.com>
 
 include ../Makefile.master
 
@@ -248,7 +249,6 @@ COMMON_SUBDIRS=		\
 	luxadm		\
 	lvm		\
 	mach		\
-	machid		\
 	mail		\
 	mailx		\
 	makekey		\
