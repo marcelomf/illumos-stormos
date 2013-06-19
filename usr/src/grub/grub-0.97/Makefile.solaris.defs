@@ -1,6 +1,7 @@
 #
 # Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 include $(SRC)/Makefile.master
 
@@ -68,7 +69,7 @@ CPPFLAGS	= $(DEFS) $(INCLUDES) $(WARNFLAGS) \
 		  $(ENVCPPFLAGS3:-I%=-isystem %) \
 		  $(t.ENVCPPFLAGS4:I,%=-nostdinc -isystem %)
 
-CCLD		= $(GNU_ROOT)/bin/gld
+CCLD		= /usr/bin/gld
 LDFLAGS		= $(BASE_LDFLAGS)
 LINKFLAGS	= -g
 LINK		= $(CCLD) $(LINKFLAGS) $(LDFLAGS)
@@ -78,7 +79,7 @@ OPTFLAGS	= -falign-jumps=1 -falign-loops=1 -falign-functions=1
 #WARNFLAGS	= -Wall -Wmissing-prototypes -Wunused -Wshadow \
 #		  -Wpointer-arith -Wundef
 
-OBJCOPY		= $(GNU_ROOT)/bin/gobjcopy
+OBJCOPY		= /usr/bin/gobjcopy
 
 AR		= /usr/ccs/bin/ar
 RANLIB		= :

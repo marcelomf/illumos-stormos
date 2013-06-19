@@ -22,6 +22,7 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG	= aw
@@ -33,8 +34,8 @@ CERRWARN += -_gcc=-Wno-uninitialized
 
 LINTFLAGS += -ux -Xa -errchk=locfmtchk,parentheses
 
-CPPFLAGS +=	-DDEFAULT_AS_DIR='"$(GNU_ROOT)/bin"'
-CPPFLAGS +=	-DDEFAULT_AS64_DIR='"$(GNU_ROOT)/bin"'
+CPPFLAGS +=	-DDEFAULT_AS_DIR='"/usr/bin"'
+CPPFLAGS +=	-DDEFAULT_AS64_DIR='"/usr/bin"'
 CPPFLAGS +=	-DDEFAULT_M4_DIR='"/usr/ccs/bin"'
 CPPFLAGS +=	-DDEFAULT_M4LIB_DIR='"/usr/ccs/lib"'
 CPPFLAGS +=	-DDEFAULT_CPP_DIR='"/usr/ccs/lib"'

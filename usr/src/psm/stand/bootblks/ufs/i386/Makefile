@@ -22,6 +22,7 @@
 #
 # Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # psm/stand/bootblks/ufs/i386/Makefile
 #
@@ -36,10 +37,10 @@ CC		= $(GCC_ROOT)/bin/gcc
 ASFLAGS		= -B$(GCC_ROOT)/bin/ -fno-builtin -nostdinc
 CPPFLAGS	=
 
-LD		= $(GNU_ROOT)/bin/gld
+LD		= /usr/bin/gld
 LDFLAGS		= -nostdlib -N -Ttext 600
 
-OBJCOPY		= $(GNU_ROOT)/bin/gobjcopy
+OBJCOPY		= /usr/bin/gobjcopy
 
 INSTALL_DIR	= $(USR)/lib/fs/ufs
 INSTALL_TARGETS	= $(PROGS:%=$(INSTALL_DIR)/%)
