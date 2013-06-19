@@ -240,6 +240,7 @@ SUBDIRS += \
 	libzfs_core	\
 	libzfs		\
 	libbe		\
+	libzfs_jni	\
 	libmapid	\
 	brand		\
 	policykit	\
@@ -474,6 +475,7 @@ HDRSUBDIRS=		\
 	libxcurses2	\
 	libzfs		\
 	libzfs_core	\
+	libzfs_jni	\
 	libzoneinfo	\
 	libzonestat	\
 	hal		\
@@ -639,6 +641,7 @@ udapl/udapl_tavor:	udapl/libdat
 libzfs:		libdevid libgen libnvpair libuutil \
 		libadm libavl libefi libidmap libmd libzfs_core
 libzfs_core:	libnvpair
+libzfs_jni:	libdiskmgt libnvpair libzfs
 libzpool:	libavl libumem libnvpair libcmdutils
 libsec:		libavl libidmap
 brand:		libc libsocket
