@@ -27,6 +27,10 @@
 # Copyright (c) 2012, Joyent, Inc.  All rights reserved.
 #
 
+#
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+#
+
 @ _START_
 
 # Message file for cmd/sgs/libld.
@@ -1446,6 +1450,8 @@
 @ MSG_ARG_T_WL		"l,-"
 
 @ MSG_ARG_T_AUXFLTR	"-auxiliary"
+@ MSG_ARG_T_ASNEEDED	"-as-needed"
+@ MSG_ARG_T_NOASNEEDED	"-no-as-needed"
 @ MSG_ARG_T_MULDEFS	"-allow-multiple-definition"
 @ MSG_ARG_T_INTERP	"-dynamic-linker"
 @ MSG_ARG_T_ENDGROUP	"-end-group"
@@ -1464,6 +1470,7 @@
 @ MSG_ARG_T_STRIP	"-strip-all"
 @ MSG_ARG_T_UNDEF	"-undefined"
 @ MSG_ARG_T_VERSION	"-version"
+@ MSG_ARG_T_VERSCRIPT	"-version-script="
 @ MSG_ARG_T_WHOLEARC	"-whole-archive"
 @ MSG_ARG_T_WRAP	"-wrap"
 @ MSG_ARG_T_OPAR	"("
