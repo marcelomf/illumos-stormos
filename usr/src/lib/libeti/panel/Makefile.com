@@ -21,9 +21,10 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
-LIBRARY=	libpanel.a
+LIBRARY=	libsunw_panel.a
 VERS=		.1
 
 OBJECTS=  \
@@ -47,7 +48,7 @@ $(LINTLIB) :=	SRCS=$(SRCDIR)/$(LINTSRC)
 
 CPPFLAGS +=	-I../inc
 CFLAGS +=       $(CCVERBOSE)
-LDLIBS +=       -lcurses -lc
+LDLIBS +=       -lsunw_curses -lc
 
 CERRWARN +=	-_gcc=-Wno-parentheses
 

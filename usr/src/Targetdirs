@@ -718,25 +718,25 @@ $(DIRLINKS:%=$(ROOT)%):= \
 # Special symlinks to populate usr/ccs/lib, whose objects
 # have actually been moved to usr/lib
 # Rather than adding another set of rules, we add usr/lib/lwp files here
-$(ROOT)/usr/ccs/lib/libcurses.so:= 	REALPATH=../../../lib/libcurses.so.1
-$(ROOT)/usr/ccs/lib/llib-lcurses:= 	REALPATH=../../../lib/llib-lcurses
-$(ROOT)/usr/ccs/lib/llib-lcurses.ln:= 	REALPATH=../../../lib/llib-lcurses.ln
-$(ROOT)/usr/ccs/lib/libform.so:=	REALPATH=../../lib/libform.so.1
-$(ROOT)/usr/ccs/lib/llib-lform:= 	REALPATH=../../lib/llib-lform
-$(ROOT)/usr/ccs/lib/llib-lform.ln:= 	REALPATH=../../lib/llib-lform.ln
+$(ROOT)/usr/ccs/lib/libcurses.so:= 	REALPATH=../../../lib/libsunw_curses.so.1
+$(ROOT)/usr/ccs/lib/llib-lcurses:= 	REALPATH=../../../lib/llib-lsunw_curses
+$(ROOT)/usr/ccs/lib/llib-lcurses.ln:= 	REALPATH=../../../lib/llib-lsunw_curses.ln
+$(ROOT)/usr/ccs/lib/libform.so:=	REALPATH=../../lib/libsunw_form.so.1
+$(ROOT)/usr/ccs/lib/llib-lform:= 	REALPATH=../../lib/llib-lsunw_form
+$(ROOT)/usr/ccs/lib/llib-lform.ln:= 	REALPATH=../../lib/llib-lsunw_form.ln
 $(ROOT)/usr/ccs/lib/libgen.so:=		REALPATH=../../../lib/libgen.so.1
 $(ROOT)/usr/ccs/lib/llib-lgen:= 	REALPATH=../../../lib/llib-lgen
 $(ROOT)/usr/ccs/lib/llib-lgen.ln:= 	REALPATH=../../../lib/llib-lgen.ln
 $(ROOT)/usr/ccs/lib/libmalloc.so:=	REALPATH=../../lib/libmalloc.so.1
-$(ROOT)/usr/ccs/lib/libmenu.so:=	REALPATH=../../lib/libmenu.so.1
-$(ROOT)/usr/ccs/lib/llib-lmenu:= 	REALPATH=../../lib/llib-lmenu
-$(ROOT)/usr/ccs/lib/llib-lmenu.ln:= 	REALPATH=../../lib/llib-lmenu.ln
-$(ROOT)/usr/ccs/lib/libpanel.so:=	REALPATH=../../lib/libpanel.so.1
-$(ROOT)/usr/ccs/lib/llib-lpanel:= 	REALPATH=../../lib/llib-lpanel
-$(ROOT)/usr/ccs/lib/llib-lpanel.ln:= 	REALPATH=../../lib/llib-lpanel.ln
-$(ROOT)/usr/ccs/lib/libtermlib.so:=	REALPATH=../../../lib/libcurses.so.1
-$(ROOT)/usr/ccs/lib/llib-ltermlib:= 	REALPATH=../../../lib/llib-lcurses
-$(ROOT)/usr/ccs/lib/llib-ltermlib.ln:= 	REALPATH=../../../lib/llib-lcurses.ln
+$(ROOT)/usr/ccs/lib/libmenu.so:=	REALPATH=../../lib/libsunw_menu.so.1
+$(ROOT)/usr/ccs/lib/llib-lmenu:= 	REALPATH=../../lib/llib-lsunw_menu
+$(ROOT)/usr/ccs/lib/llib-lmenu.ln:= 	REALPATH=../../lib/llib-lsunw_menu.ln
+$(ROOT)/usr/ccs/lib/libpanel.so:=	REALPATH=../../lib/libsunw_panel.so.1
+$(ROOT)/usr/ccs/lib/llib-lpanel:= 	REALPATH=../../lib/llib-lsunw_panel
+$(ROOT)/usr/ccs/lib/llib-lpanel.ln:= 	REALPATH=../../lib/llib-lsunw_panel.ln
+$(ROOT)/usr/ccs/lib/libtermlib.so:=	REALPATH=../../../lib/libsunw_curses.so.1
+$(ROOT)/usr/ccs/lib/llib-ltermlib:= 	REALPATH=../../../lib/llib-lsunw_curses
+$(ROOT)/usr/ccs/lib/llib-ltermlib.ln:= 	REALPATH=../../../lib/llib-lsunw_curses.ln
 $(ROOT)/usr/ccs/lib/libtermcap.so:=	REALPATH=../../../lib/libtermcap.so.1
 $(ROOT)/usr/ccs/lib/llib-ltermcap:= 	REALPATH=../../../lib/llib-ltermcap
 $(ROOT)/usr/ccs/lib/llib-ltermcap.ln:= 	REALPATH=../../../lib/llib-ltermcap.ln
@@ -756,13 +756,13 @@ $(ROOT)/usr/lib/lwp/libthread_db.so.1:=	REALPATH=../libthread_db.so.1
 
 # symlinks to populate usr/ccs/lib/$(MACH64)
 $(ROOT)/usr/ccs/lib/$(MACH64)/libcurses.so:= \
-	REALPATH=../../../../lib/$(MACH64)/libcurses.so.1
+	REALPATH=../../../../lib/$(MACH64)/libsunw_curses.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/llib-lcurses.ln:= \
-	REALPATH=../../../../lib/$(MACH64)/llib-lcurses.ln
+	REALPATH=../../../../lib/$(MACH64)/llib-lsunw_curses.ln
 $(ROOT)/usr/ccs/lib/$(MACH64)/libform.so:= \
-	REALPATH=../../../lib/$(MACH64)/libform.so.1
+	REALPATH=../../../lib/$(MACH64)/libsunw_form.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/llib-lform.ln:= \
-	REALPATH=../../../lib/$(MACH64)/llib-lform.ln
+	REALPATH=../../../lib/$(MACH64)/llib-lsunw_form.ln
 $(ROOT)/usr/ccs/lib/$(MACH64)/libgen.so:= \
 	REALPATH=../../../../lib/$(MACH64)/libgen.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/llib-lgen.ln:= \
@@ -770,17 +770,17 @@ $(ROOT)/usr/ccs/lib/$(MACH64)/llib-lgen.ln:= \
 $(ROOT)/usr/ccs/lib/$(MACH64)/libmalloc.so:= \
 	REALPATH=../../../lib/$(MACH64)/libmalloc.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/libmenu.so:= \
-	REALPATH=../../../lib/$(MACH64)/libmenu.so.1
+	REALPATH=../../../lib/$(MACH64)/libsunw_menu.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/llib-lmenu.ln:= \
-	REALPATH=../../../lib/$(MACH64)/llib-lmenu.ln
+	REALPATH=../../../lib/$(MACH64)/llib-lsunw_menu.ln
 $(ROOT)/usr/ccs/lib/$(MACH64)/libpanel.so:= \
-	REALPATH=../../../lib/$(MACH64)/libpanel.so.1
+	REALPATH=../../../lib/$(MACH64)/libsunw_panel.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/llib-lpanel.ln:= \
-	REALPATH=../../../lib/$(MACH64)/llib-lpanel.ln
+	REALPATH=../../../lib/$(MACH64)/llib-lsunw_panel.ln
 $(ROOT)/usr/ccs/lib/$(MACH64)/libtermlib.so:= \
-	REALPATH=../../../../lib/$(MACH64)/libcurses.so.1
+	REALPATH=../../../../lib/$(MACH64)/libsunw_curses.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/llib-ltermlib.ln:= \
-	REALPATH=../../../../lib/$(MACH64)/llib-lcurses.ln
+	REALPATH=../../../../lib/$(MACH64)/llib-lsunw_curses.ln
 $(ROOT)/usr/ccs/lib/$(MACH64)/libtermcap.so:= \
 	REALPATH=../../../../lib/$(MACH64)/libtermcap.so.1
 $(ROOT)/usr/ccs/lib/$(MACH64)/llib-ltermcap.ln:= \
@@ -908,8 +908,8 @@ $(ROOT)/usr/lib/libcryptoutil.so.1:=	REALPATH=../../lib/libcryptoutil.so.1
 $(ROOT)/usr/lib/libcryptoutil.so:=	REALPATH=../../lib/libcryptoutil.so.1
 $(ROOT)/usr/lib/libctf.so.1:=		REALPATH=../../lib/libctf.so.1
 $(ROOT)/usr/lib/libctf.so:=		REALPATH=../../lib/libctf.so.1
-$(ROOT)/usr/lib/libcurses.so.1:=	REALPATH=../../lib/libcurses.so.1
-$(ROOT)/usr/lib/libcurses.so:=		REALPATH=../../lib/libcurses.so.1
+$(ROOT)/usr/lib/libsunw_curses.so.1:=	REALPATH=../../lib/libsunw_curses.so.1
+$(ROOT)/usr/lib/libsunw_curses.so:=	REALPATH=../../lib/libsunw_curses.so.1
 $(ROOT)/usr/lib/libdevice.so.1:=	REALPATH=../../lib/libdevice.so.1
 $(ROOT)/usr/lib/libdevice.so:=		REALPATH=../../lib/libdevice.so.1
 $(ROOT)/usr/lib/libdevid.so.1:=		REALPATH=../../lib/libdevid.so.1
@@ -994,8 +994,8 @@ $(ROOT)/usr/lib/libsysevent.so.1:=	REALPATH=../../lib/libsysevent.so.1
 $(ROOT)/usr/lib/libsysevent.so:=	REALPATH=../../lib/libsysevent.so.1
 $(ROOT)/usr/lib/libtermcap.so.1:=	REALPATH=../../lib/libtermcap.so.1
 $(ROOT)/usr/lib/libtermcap.so:=		REALPATH=../../lib/libtermcap.so.1
-$(ROOT)/usr/lib/libtermlib.so.1:=	REALPATH=../../lib/libcurses.so.1
-$(ROOT)/usr/lib/libtermlib.so:=		REALPATH=../../lib/libcurses.so.1
+$(ROOT)/usr/lib/libsunw_termlib.so.1:=		REALPATH=../../lib/libsunw_curses.so.1
+$(ROOT)/usr/lib/libsunw_termlib.so:=	REALPATH=../../lib/libsunw_curses.so.1
 $(ROOT)/usr/lib/libthread.so.1:=	REALPATH=../../lib/libthread.so.1
 $(ROOT)/usr/lib/libthread.so:=		REALPATH=../../lib/libthread.so.1
 $(ROOT)/usr/lib/libthread_db.so.1:=	REALPATH=../../lib/libc_db.so.1
@@ -1034,8 +1034,8 @@ $(ROOT)/usr/lib/llib-lcontract.ln:=	REALPATH=../../lib/llib-lcontract.ln
 $(ROOT)/usr/lib/llib-lcontract:=	REALPATH=../../lib/llib-lcontract
 $(ROOT)/usr/lib/llib-lctf.ln:=		REALPATH=../../lib/llib-lctf.ln
 $(ROOT)/usr/lib/llib-lctf:=		REALPATH=../../lib/llib-lctf
-$(ROOT)/usr/lib/llib-lcurses.ln:=	REALPATH=../../lib/llib-lcurses.ln
-$(ROOT)/usr/lib/llib-lcurses:=		REALPATH=../../lib/llib-lcurses
+$(ROOT)/usr/lib/llib-lsunw_curses.ln:=	REALPATH=../../lib/llib-lsunw_curses.ln
+$(ROOT)/usr/lib/llib-lsunw_curses:=		REALPATH=../../lib/llib-lsunw_curses
 $(ROOT)/usr/lib/llib-ldevice.ln:=	REALPATH=../../lib/llib-ldevice.ln
 $(ROOT)/usr/lib/llib-ldevice:=		REALPATH=../../lib/llib-ldevice
 $(ROOT)/usr/lib/llib-ldevid.ln:=	REALPATH=../../lib/llib-ldevid.ln
@@ -1100,8 +1100,8 @@ $(ROOT)/usr/lib/llib-lsysevent.ln:=	REALPATH=../../lib/llib-lsysevent.ln
 $(ROOT)/usr/lib/llib-lsysevent:=	REALPATH=../../lib/llib-lsysevent
 $(ROOT)/usr/lib/llib-ltermcap.ln:=	REALPATH=../../lib/llib-ltermcap.ln
 $(ROOT)/usr/lib/llib-ltermcap:=		REALPATH=../../lib/llib-ltermcap
-$(ROOT)/usr/lib/llib-ltermlib.ln:=	REALPATH=../../lib/llib-lcurses.ln
-$(ROOT)/usr/lib/llib-ltermlib:=		REALPATH=../../lib/llib-lcurses
+$(ROOT)/usr/lib/llib-lsunw_termlib.ln:=		REALPATH=../../lib/llib-lsunw_curses.ln
+$(ROOT)/usr/lib/llib-lsunw_termlib:=		REALPATH=../../lib/llib-lsunw_curses
 $(ROOT)/usr/lib/llib-lthread.ln:=	REALPATH=../../lib/llib-lthread.ln
 $(ROOT)/usr/lib/llib-lthread:=		REALPATH=../../lib/llib-lthread
 $(ROOT)/usr/lib/llib-lthread_db.ln:=	REALPATH=../../lib/llib-lc_db.ln
@@ -1178,10 +1178,10 @@ $(ROOT)/usr/lib/$(MACH64)/libctf.so.1:= \
 	REALPATH=../../../lib/$(MACH64)/libctf.so.1
 $(ROOT)/usr/lib/$(MACH64)/libctf.so:= \
 	REALPATH=../../../lib/$(MACH64)/libctf.so.1
-$(ROOT)/usr/lib/$(MACH64)/libcurses.so.1:= \
-	REALPATH=../../../lib/$(MACH64)/libcurses.so.1
-$(ROOT)/usr/lib/$(MACH64)/libcurses.so:= \
-	REALPATH=../../../lib/$(MACH64)/libcurses.so.1
+$(ROOT)/usr/lib/$(MACH64)/libsunw_curses.so.1:= \
+	REALPATH=../../../lib/$(MACH64)/libsunw_curses.so.1
+$(ROOT)/usr/lib/$(MACH64)/libsunw_curses.so:= \
+	REALPATH=../../../lib/$(MACH64)/libsunw_curses.so.1
 $(ROOT)/usr/lib/$(MACH64)/libdevice.so.1:= \
 	REALPATH=../../../lib/$(MACH64)/libdevice.so.1
 $(ROOT)/usr/lib/$(MACH64)/libdevice.so:= \
@@ -1326,10 +1326,10 @@ $(ROOT)/usr/lib/$(MACH64)/libtermcap.so.1:= \
 	REALPATH=../../../lib/$(MACH64)/libtermcap.so.1
 $(ROOT)/usr/lib/$(MACH64)/libtermcap.so:= \
 	REALPATH=../../../lib/$(MACH64)/libtermcap.so.1
-$(ROOT)/usr/lib/$(MACH64)/libtermlib.so.1:= \
-	REALPATH=../../../lib/$(MACH64)/libcurses.so.1
-$(ROOT)/usr/lib/$(MACH64)/libtermlib.so:= \
-	REALPATH=../../../lib/$(MACH64)/libcurses.so.1
+$(ROOT)/usr/lib/$(MACH64)/libsunw_termlib.so.1:= \
+	REALPATH=../../../lib/$(MACH64)/libsunw_curses.so.1
+$(ROOT)/usr/lib/$(MACH64)/libsunw_termlib.so:= \
+	REALPATH=../../../lib/$(MACH64)/libsunw_curses.so.1
 $(ROOT)/usr/lib/$(MACH64)/libthread.so.1:= \
 	REALPATH=../../../lib/$(MACH64)/libthread.so.1
 $(ROOT)/usr/lib/$(MACH64)/libthread.so:= \
@@ -1394,8 +1394,8 @@ $(ROOT)/usr/lib/$(MACH64)/llib-lcontract.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-lcontract.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-lctf.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-lctf.ln
-$(ROOT)/usr/lib/$(MACH64)/llib-lcurses.ln:= \
-	REALPATH=../../../lib/$(MACH64)/llib-lcurses.ln
+$(ROOT)/usr/lib/$(MACH64)/llib-lsunw_curses.ln:= \
+	REALPATH=../../../lib/$(MACH64)/llib-lsunw_curses.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-ldevice.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-ldevice.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-ldevid.ln:= \
@@ -1455,7 +1455,7 @@ $(ROOT)/usr/lib/$(MACH64)/llib-lsysevent.ln:= \
 $(ROOT)/usr/lib/$(MACH64)/llib-ltermcap.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-ltermcap.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-ltermlib.ln:= \
-	REALPATH=../../../lib/$(MACH64)/llib-lcurses.ln
+	REALPATH=../../../lib/$(MACH64)/llib-lsunw_curses.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-lthread.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-lthread.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-lthread_db.ln:= \
@@ -1526,8 +1526,8 @@ SYM.USRLIB= \
 	/usr/lib/libcontract.so.1 \
 	/usr/lib/libctf.so \
 	/usr/lib/libctf.so.1 \
-	/usr/lib/libcurses.so \
-	/usr/lib/libcurses.so.1 \
+	/usr/lib/libsunw_curses.so \
+	/usr/lib/libsunw_curses.so.1 \
 	/usr/lib/libdevice.so \
 	/usr/lib/libdevice.so.1 \
 	/usr/lib/libdevid.so \
@@ -1606,8 +1606,8 @@ SYM.USRLIB= \
 	/usr/lib/libsysevent.so.1 \
 	/usr/lib/libtermcap.so \
 	/usr/lib/libtermcap.so.1 \
-	/usr/lib/libtermlib.so \
-	/usr/lib/libtermlib.so.1 \
+	/usr/lib/libsunw_termlib.so \
+	/usr/lib/libsunw_termlib.so.1 \
 	/usr/lib/libthread.so \
 	/usr/lib/libthread.so.1 \
 	/usr/lib/libthread_db.so \
@@ -1646,8 +1646,8 @@ SYM.USRLIB= \
 	/usr/lib/llib-lcontract.ln \
 	/usr/lib/llib-lctf \
 	/usr/lib/llib-lctf.ln \
-	/usr/lib/llib-lcurses \
-	/usr/lib/llib-lcurses.ln \
+	/usr/lib/llib-lsunw_curses \
+	/usr/lib/llib-lsunw_curses.ln \
 	/usr/lib/llib-ldevice \
 	/usr/lib/llib-ldevice.ln \
 	/usr/lib/llib-ldevid \
@@ -1774,8 +1774,8 @@ SYM.USRLIB64= \
 	/usr/lib/$(MACH64)/libcontract.so.1 \
 	/usr/lib/$(MACH64)/libctf.so \
 	/usr/lib/$(MACH64)/libctf.so.1 \
-	/usr/lib/$(MACH64)/libcurses.so \
-	/usr/lib/$(MACH64)/libcurses.so.1 \
+	/usr/lib/$(MACH64)/libsunw_curses.so \
+	/usr/lib/$(MACH64)/libsunw_curses.so.1 \
 	/usr/lib/$(MACH64)/libdevice.so \
 	/usr/lib/$(MACH64)/libdevice.so.1 \
 	/usr/lib/$(MACH64)/libdevid.so \
@@ -1848,8 +1848,8 @@ SYM.USRLIB64= \
 	/usr/lib/$(MACH64)/libsysevent.so.1 \
 	/usr/lib/$(MACH64)/libtermcap.so \
 	/usr/lib/$(MACH64)/libtermcap.so.1 \
-	/usr/lib/$(MACH64)/libtermlib.so \
-	/usr/lib/$(MACH64)/libtermlib.so.1 \
+	/usr/lib/$(MACH64)/libsunw_termlib.so \
+	/usr/lib/$(MACH64)/libsunw_termlib.so.1 \
 	/usr/lib/$(MACH64)/libthread.so \
 	/usr/lib/$(MACH64)/libthread.so.1 \
 	/usr/lib/$(MACH64)/libthread_db.so \
@@ -1880,7 +1880,7 @@ SYM.USRLIB64= \
 	/usr/lib/$(MACH64)/llib-lcmdutils.ln \
 	/usr/lib/$(MACH64)/llib-lcontract.ln \
 	/usr/lib/$(MACH64)/llib-lctf.ln \
-	/usr/lib/$(MACH64)/llib-lcurses.ln \
+	/usr/lib/$(MACH64)/llib-lsunw_curses.ln \
 	/usr/lib/$(MACH64)/llib-ldevice.ln \
 	/usr/lib/$(MACH64)/llib-ldevid.ln \
 	/usr/lib/$(MACH64)/llib-ldevinfo.ln \

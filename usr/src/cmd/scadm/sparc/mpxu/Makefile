@@ -21,8 +21,7 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/scadm/sparc/mpxu/Makefile
 #
@@ -44,7 +43,7 @@ include $(SRCDIR)/Makefile.com
 CFLAGS		+= -R /usr/platform/$(PLATFORM)/lib
 
 LDLIBS		+= -L$(ROOT)/usr/platform/$(PLATFORM)/lib
-LDLIBS		+= -lrsc -lcurses
+LDLIBS		+= -lrsc -lsunw_curses
 LINTFLAGS	+= -u
 
 .KEEP_STATE:

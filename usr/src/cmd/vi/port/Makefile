@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 # cmd/vi/port/Makefile
@@ -80,11 +81,11 @@ CPPFLAGS +=  -DUSG -DSTDIO -DVMUNIX -DTABS=8 -DSINGLE -DTAG_STACK
 LDFLAGS +=	$(MAPFILE.NGB:%=-M%)
 
 CLOBBERFILES += $(LIBPROGS)
-ex :=		LDLIBS += -lmapmalloc -lcurses -lgen -lcrypt_i
-$(XPG4) :=	LDLIBS += -lmapmalloc -lcurses -lgen -lcrypt_i
-$(XPG6) :=	LDLIBS += -lmapmalloc -lcurses -lgen -lcrypt_i
+ex :=		LDLIBS += -lmapmalloc -lsunw_curses -lgen -lcrypt_i
+$(XPG4) :=	LDLIBS += -lmapmalloc -lsunw_curses -lgen -lcrypt_i
+$(XPG6) :=	LDLIBS += -lmapmalloc -lsunw_curses -lgen -lcrypt_i
 exrecover :=	LDLIBS += -lmapmalloc -lcrypt_i
-lint :=		LDLIBS += -lmapmalloc -lcurses -lgen -lcrypt
+lint :=		LDLIBS += -lmapmalloc -lsunw_curses -lgen -lcrypt
 
 ROOTLIBPROGS= $(LIBPROGS:%=$(ROOTLIB)/%)
 

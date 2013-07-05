@@ -21,8 +21,7 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY =	psm-lpsched.a
@@ -44,7 +43,7 @@ CPPFLAGS +=	-I$(SRC)/lib/print/libpapi-common/common
 CPPFLAGS +=	-D_REENTRANT
 CPPFLAGS +=	$(ENVCPPFLAGS1)
 CPPFLAGS +=	$(ENVCPPFLAGS2)
-LDLIBS +=	-lcurses -lc
+LDLIBS +=	-lsunw_curses -lc
 LDLIBS +=	-L$(SRC)/cmd/lp/lib/msgs -llpmsg
 LDLIBS +=	-L$(SRC)/cmd/lp/lib/printers -llpprt
 LDLIBS +=	-L$(SRC)/cmd/lp/lib/class -llpcls

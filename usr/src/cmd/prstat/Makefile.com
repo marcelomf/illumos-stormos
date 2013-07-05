@@ -21,6 +21,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/prstat/Makefile.com
 #
@@ -33,7 +34,7 @@ include ../../Makefile.cmd
 
 CFLAGS += $(CCVERBOSE)
 CERRWARN += -_gcc=-Wno-parentheses
-LDLIBS += -lcurses -lproject
+LDLIBS += -lsunw_curses -lproject
 LINTFLAGS += -u
 LINTFLAGS64 += -u
 

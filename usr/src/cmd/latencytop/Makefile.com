@@ -21,6 +21,7 @@
 #
 # Copyright (c) 2008-2009, Intel Corporation.
 # All Rights Reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG = latencytop
@@ -36,7 +37,7 @@ CERRWARN += -_gcc=-Wno-uninitialized
 
 CPPFLAGS += -DEMBED_CONFIGS -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include
 C99MODE = $(C99_ENABLE)
-LDLIBS += -lcurses -ldtrace
+LDLIBS += -lsunw_curses -ldtrace
 all install	:= LDLIBS += -lglib-2.0
 
 LINTFLAGS += -erroff=E_NAME_USED_NOT_DEF2

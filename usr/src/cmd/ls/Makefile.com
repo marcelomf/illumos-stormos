@@ -21,6 +21,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/ls/Makefile.com
 #
@@ -33,7 +34,7 @@ SRCS=           $(OBJS:%.o=../%.c)
 
 include ../../Makefile.cmd
 
-LDLIBS += -lsec -lnvpair -lcmdutils -lcurses
+LDLIBS += -lsec -lnvpair -lcmdutils -lsunw_curses
 CFLAGS	+=	$(CCVERBOSE)
 CERRWARN +=	-_gcc=-Wno-parentheses
 CERRWARN +=	-_gcc=-Wno-uninitialized

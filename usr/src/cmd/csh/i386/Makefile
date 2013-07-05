@@ -1,3 +1,4 @@
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 # Copyright (c) 1993, 2010, Oracle and/or its affiliates. All rights reserved.
 #
 #	Copyright (c) 1983, 1984, 1985, 1986, 1987, 1988, 1989 AT&T
@@ -22,7 +23,7 @@ DEFS	=  -DVFORK -DFILEC -DBSD_COMP -DFIVE	# No TELL when MBCHAR
 CPPFLAGS= -I. $(DEFS) $(MBCHAR) $(CPPFLAGS.master)
 CPPFLAGS +=	-I../../sh
 CPPFLAGS += -D_FILE_OFFSET_BITS=64
-LDLIBS += -lcurses
+LDLIBS += -lsunw_curses
 
 CERRWARN += -_gcc=-Wno-implicit-function-declaration
 CERRWARN += -_gcc=-Wno-uninitialized

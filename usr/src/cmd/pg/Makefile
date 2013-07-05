@@ -22,6 +22,7 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= pg
@@ -29,7 +30,7 @@ PROG= pg
 include ../Makefile.cmd
 
 CFLAGS += -DSINGLE $(CCVERBOSE)
-LDLIBS += -lgen -lcurses
+LDLIBS += -lgen -lsunw_curses
 XGETFLAGS += -a -x $(PROG).xcl
 CPPFLAGS += -D_FILE_OFFSET_BITS=64
 

@@ -19,10 +19,9 @@
 # CDDL HEADER END
 #
 #
-# ident	"%Z%%M%	%I%	%E% SMI"
-#
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/lp/model/Makefile
 #
@@ -63,7 +62,7 @@ CPPFLAGS =		-I$(LPINC) $(CPPFLAGS.master)
 
 # conditional assignments
 lp.tell :=			LDLIBS += $(LIBMSG) $(LIBLP)
-lp.set drain.output lp.cat :=	LDLIBS += $(LIBLP) -lcurses
+lp.set drain.output lp.cat :=	LDLIBS += $(LIBLP) -lsunw_curses
 lp.tsol_separator :=		LDLIBS += -ltsol
 
 $(ROOTMISC) :=		FILEMODE = 0444

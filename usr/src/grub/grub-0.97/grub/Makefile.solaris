@@ -1,8 +1,7 @@
 #
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 include ../../Makefile.grub
 include ../Makefile.solaris.defs
@@ -10,7 +9,7 @@ include ../Makefile.solaris.defs
 
 GRUB		= grub
 GRUB_OBJS	= asmstub.o main.o
-$(GRUB)		:= LIBS = ../stage2/libgrub.a ../lib/libcommon.a -lcurses
+$(GRUB)		:= LIBS = ../stage2/libgrub.a ../lib/libcommon.a -lsunw_curses
 $(GRUB)		:= LDFLAGS += $(LDLIBS.cmd)
 $(GRUB)		:= CCLD = $(CC)
 

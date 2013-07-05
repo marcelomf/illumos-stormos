@@ -23,8 +23,7 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/lp/cmd/lpadmin/Makefile
 #
@@ -64,7 +63,7 @@ LPLIBS=		$(LIBACC)	\
 		$(LIBOAM)	\
 		$(LIBLP)
 
-SYSLIBS=	-lcurses
+SYSLIBS=	-lsunw_curses
 
 LDLIBS +=	-lsecdb $(LPLIBS) $(SYSLIBS) $(I18N)
 LDFLAGS +=	$(MAPFILE.NGB:%=-M%)

@@ -20,10 +20,11 @@
 #
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
-# Use is subject to license terms.
+# Use is subject to license terms.a
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
-LIBRARY=	libform.a
+LIBRARY=	libsunw_form.a
 VERS=		.1
 
 OBJECTS=  \
@@ -73,7 +74,7 @@ $(LINTLIB) :=	SRCS=$(SRCDIR)/$(LINTSRC)
 
 CPPFLAGS +=	-I../inc
 CFLAGS +=       $(CCVERBOSE)
-LDLIBS +=       -lcurses -lc
+LDLIBS +=       -lsunw_curses -lc
 
 CERRWARN +=	-_gcc=-Wno-parentheses
 CERRWARN +=	-_gcc=-Wno-uninitialized

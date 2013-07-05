@@ -22,6 +22,7 @@
 #
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= captoinfo
@@ -32,7 +33,7 @@ SRCS= $(OBJS:%.o=%.c)
 include ../Makefile.cmd
 
 LDFLAGS +=	$(MAPFILE.INT:%=-M%)
-LDLIBS +=	-lcurses
+LDLIBS +=	-lsunw_curses
 CPPFLAGS +=	-I../../lib/libcurses/screen
 CERRWARN +=	-_gcc=-Wno-parentheses
 

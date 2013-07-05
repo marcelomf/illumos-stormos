@@ -83,7 +83,7 @@ finger :=	CFLAGS += $(CCVERBOSE)
 finger :=	CPPFLAGS += -D_FILE_OFFSET_BITS=64
 
 dns-sd :=		LDLIBS += -lsocket -ldns_sd
-finger :=		LDLIBS += -lnsl -lcurses -lsocket
+finger :=		LDLIBS += -lnsl -lsunw_curses -lsocket
 rcp lint-rcp :=		LDLIBS += -lsocket -lsec -lsendfile
 rdate lint-rdate:=	LDLIBS += -lsocket
 rlogin lint-rlogin :=	LDLIBS += -lnsl -lsocket

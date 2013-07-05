@@ -22,6 +22,7 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=	talk
@@ -40,7 +41,7 @@ POFILE= talk.po
 CFLAGS +=	$(CCVERBOSE)
 CERRWARN +=	-_gcc=-Wno-uninitialized
 CPPFLAGS +=	-DSYSV -DSTRNET -DBSD_COMP
-LDLIBS +=	-lcurses -lsocket -lnsl
+LDLIBS +=	-lsunw_curses -lsocket -lnsl
 
 .KEEP_STATE:
 

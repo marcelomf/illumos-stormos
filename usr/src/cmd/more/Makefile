@@ -22,6 +22,7 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= more
@@ -29,7 +30,7 @@ DATA= more.help
 
 include ../Makefile.cmd
 
-LDLIBS += -lcurses
+LDLIBS += -lsunw_curses
 
 ROOTLIBDATA= $(DATA:%=$(ROOTLIB)/%)
 CPPFLAGS += -D_FILE_OFFSET_BITS=64

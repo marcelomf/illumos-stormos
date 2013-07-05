@@ -22,13 +22,14 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= tabs
 
 include ../Makefile.cmd
 
-LDLIBS += -lcurses
+LDLIBS += -lsunw_curses
 CFLAGS += $(CCVERBOSE)
 CERRWARN += -_gcc=-Wno-parentheses
 CERRWARN += -_gcc=-Wno-address

@@ -1,3 +1,4 @@
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 # Copyright (c) 1992, 2010, Oracle and/or its affiliates. All rights reserved.
 
 #	Copyright (c) 1983, 1984, 1985, 1986, 1987, 1988, 1989 AT&T
@@ -32,7 +33,7 @@ CERRWARN += -_gcc=-Wno-clobbered
 CERRWARN += -_gcc=-Wno-unused-label
 CERRWARN += -_gcc=-Wno-extra
 
-LDLIBS += -lcurses
+LDLIBS += -lsunw_curses
 
 MAPFILES =	../mapfile-intf $(MAPFILE.NGB)
 LDFLAGS +=	$(MAPFILES:%=-M%)

@@ -53,7 +53,7 @@ SCRFILES = screen/keycaps \
 HDRS= 		curses.h term.h unctrl.h
 HDRDIR=		screen
 
-LIBRARY=	libcurses.a
+LIBRARY=	libsunw_curses.a
 TEXT_DOMAIN=	SUNW_OST_OSLIB
 XGETFLAGS=	-a
 MSGDIRS=	screen

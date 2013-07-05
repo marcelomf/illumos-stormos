@@ -27,6 +27,7 @@
 # Copyright 2011 Nexenta Systems, Inc.  All rights reserved.
 # Copyright (c) 2012 by Delphix. All rights reserved.
 # Copyright (c) 2012 Joyent, Inc. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 .KEEP_STATE:
@@ -97,7 +98,7 @@ CPPFLAGS += -D_MDB -I. -I../.. -I../../../common
 C99MODE=	-xc99=%all
 C99LMODE=	-Xc99=%all
 
-LDLIBS += -lcurses -lkvm -lproc -lrtld_db -lctf -lumem -ldisasm -lscf
+LDLIBS += -lsunw_curses -lkvm -lproc -lrtld_db -lctf -lumem -ldisasm -lscf
 
 CERRWARN += -_gcc=-Wno-uninitialized
 CERRWARN += -_gcc=-Wno-char-subscripts

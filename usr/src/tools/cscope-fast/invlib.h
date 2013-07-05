@@ -28,8 +28,6 @@
  * Use is subject to license terms.
  */
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 /* inverted index definitions */
 
 /* postings temporary file long number coding into characters */
@@ -88,7 +86,7 @@ extern	long	*srcoffset;	/* source file name database offsets */
 extern	int	nsrcoffset;	/* number of file name database offsets */
 
 extern void	boolclear(void);
-extern POSTING	*boolfile(INVCONTROL *invcntl, long *num, int bool);
+extern POSTING	*boolfile(INVCONTROL *invcntl, long *num, int op);
 extern void	invclose(INVCONTROL *invcntl);
 extern long	invfind(INVCONTROL *invcntl, char *searchterm);
 extern int	invforward(INVCONTROL *invcntl);

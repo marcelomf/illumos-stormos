@@ -19,9 +19,7 @@
 #
 # CDDL HEADER END
 #
-#
-#ident	"%Z%%M%	%I%	%E% SMI"
-#
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 # Copyright (c) 1989 by Sun Microsystems, Inc.
 #
 
@@ -29,7 +27,7 @@ PROG= ul
 
 include ../Makefile.cmd
 
-LDLIBS += -lcurses
+LDLIBS += -lsunw_curses
 
 .KEEP_STATE:
 

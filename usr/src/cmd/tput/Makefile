@@ -22,6 +22,7 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= tput
@@ -33,7 +34,7 @@ include ../Makefile.cmd
 CFLAGS += $(CCVERBOSE)
 CERRWARN += -_gcc=-Wno-parentheses
 XGETFLAGS += -a -x tput.xcl
-LDLIBS +=  -lcurses
+LDLIBS +=  -lsunw_curses
 
 all: $(PROG)
 

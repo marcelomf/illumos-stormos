@@ -21,6 +21,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		ipf ipfs ipmon ipnat ippool ipfstat
@@ -59,7 +60,7 @@ LDFLAGS		+= $(MAPFILE.NGB:%=-M%)
 CPPFLAGS	+= -I. -DIPFILTER_LOOKUP -DIPFILTER_LOG
 
 ipfstat.o	:=	CPPFLAGS += -DSTATETOP
-ipfstat		:=	LDLIBS += -lcurses
+ipfstat		:=	LDLIBS += -lsunw_curses
 
 ipf		:=	LDLIBS += -lsocket -lnsl
 ipftest		:=	LDLIBS += -lsocket -lnsl -lmd

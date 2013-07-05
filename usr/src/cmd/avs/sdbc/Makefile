@@ -20,6 +20,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 #
 
@@ -55,7 +56,7 @@ SRCS=	$(OBJS:%.o=%.c)
 POFILE =	scmadm.po
 
 scmadm		:= LDLIBS += -lnsctl -lunistat -ldscfg
-sd_stats	:= LDLIBS += -lunistat -lcurses
+sd_stats	:= LDLIBS += -lunistat -lsunw_curses
 sd_diag		:= LDLIBS += -lnsctl
 sdbc_dynmem	:= LDLIBS += -lkstat
 

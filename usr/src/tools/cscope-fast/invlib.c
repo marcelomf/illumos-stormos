@@ -28,8 +28,6 @@
  * Use is subject to license terms.
  */
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 #include <ctype.h>
 #include <stdio.h>
 #include <sys/types.h>
@@ -948,7 +946,7 @@ boolclear(void)
 }
 
 POSTING *
-boolfile(INVCONTROL *invcntl, long *num, int bool)
+boolfile(INVCONTROL *invcntl, long *num, int op)
 {
 	ENTRY	*entryptr;
 	FILE	*file;
@@ -965,7 +963,7 @@ boolfile(INVCONTROL *invcntl, long *num, int bool)
 	ptr2 = ((unsigned long *)ptr) +
 	    (entryptr->size + (sizeof (long) - 1)) / sizeof (long);
 	*num = entryptr->post;
-	switch (bool) {
+	switch (op) {
 	case OR:
 	case NOT:
 		if (*num == 0) {
@@ -975,7 +973,7 @@ boolfile(INVCONTROL *invcntl, long *num, int bool)
 	}
 	/* make room for the new set */
 	u = 0;
-	switch (bool) {
+	switch (op) {
 	case AND:
 	case NOT:
 		newsetp = set1p = item;
@@ -1018,7 +1016,7 @@ boolfile(INVCONTROL *invcntl, long *num, int bool)
 	(void) fseek(file, (long)*ptr2, SEEK_SET);
 	read_next_posting(invcntl, &posting);
 	newsetc = 0;
-	switch (bool) {
+	switch (op) {
 	case OR:
 		/* while something in both sets */
 		set1p = item;

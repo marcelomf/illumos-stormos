@@ -21,6 +21,7 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY=	libtecla.a
@@ -34,7 +35,7 @@ include ../../Makefile.lib
 SRCDIR =	../common
 LIBS =		$(DYNLIB) $(LINTLIB)
 LDLIBS +=	-lc
-$(DYNLIB) :=	LDLIBS += -lcurses
+$(DYNLIB) :=	LDLIBS += -lsunw_curses
 CPPFLAGS +=	-I$(SRCDIR) -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 \
 	-DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 \
 	-DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 \

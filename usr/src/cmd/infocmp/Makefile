@@ -21,8 +21,7 @@
 #
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		infocmp
@@ -33,7 +32,7 @@ include		../Makefile.cmd
 
 CFLAGS +=	$(CCVERBOSE)
 XGETFLAGS +=	-a -x infocmp.xcl
-LDLIBS +=	-lcurses
+LDLIBS +=	-lsunw_curses
 CPPFLAGS +=	-I../../lib/libcurses/screen
 MAPFILES =	$(MAPFILE.INT) $(MAPFILE.NGB)
 LDFLAGS +=	$(MAPFILES:%=-M%)

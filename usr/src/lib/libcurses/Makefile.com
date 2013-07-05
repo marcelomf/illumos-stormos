@@ -19,12 +19,13 @@
 # CDDL HEADER END
 #
 #
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 # Copyright 2011 Nexenta Systems, Inc.  All rights reserved.
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 
-LIBRARY=	libcurses.a
+LIBRARY=	libsunw_curses.a
 VERS=	.1
 
 OBJECTS=	$(OBJS1) $(OBJS2) $(OBJS3) $(OBJS4) $(OBJS5) $(OBJS6)
@@ -139,7 +140,7 @@ LIBS =		$(DYNLIB) $(LINTLIB)
 
 # definitions for lint
 
-$(LINTLIB):= SRCS=../screen/llib-lcurses
+$(LINTLIB):= SRCS=../screen/llib-lsunw_curses
 
 LINTOUT=	lint.out
 LINTSRC=	$(LINTLIB:%.ln=%)
@@ -163,45 +164,45 @@ RM = rm -f
 # If and when somebody gets around to messaging this, CLOBBERFILE should not
 # be cleared (so that any .po file will be clobbered.
 #
-CLOBBERFILES=	libcurses.so libcurses.so$(VERS)
+CLOBBERFILES=	libsunw_curses.so libsunw_curses.so$(VERS)
 
 all: $(LIBS)
 
 lint: lintcheck
 
 #
-# Install rules for libtermlib.so links.
+# Install rules for libsunw_termlib.so links.
 # Augments the rule in Makefile.targ
 #
 $(ROOTLIBDIR)/$(LIBLINKS) := INS.liblink= \
 	$(RM) $@; $(SYMLINK) $(LIBLINKPATH)$(LIBLINKS)$(VERS) $@; \
 	cd $(ROOTLIBDIR); \
-		$(RM) libtermlib.so libtermlib.so$(VERS); \
-		$(SYMLINK) libcurses.so$(VERS) libtermlib.so$(VERS); \
-		$(SYMLINK) libtermlib.so$(VERS) libtermlib.so;
+		$(RM) libsunw_termlib.so libsunw_termlib.so$(VERS); \
+		$(SYMLINK) libsunw_curses.so$(VERS) libsunw_termlib.so$(VERS); \
+		$(SYMLINK) libsunw_termlib.so$(VERS) libsunw_termlib.so;
 
 $(ROOTLIBDIR64)/$(LIBLINKS) := INS.liblink64= \
 	$(RM) $@; $(SYMLINK) $(LIBLINKPATH)$(LIBLINKS)$(VERS) $@; \
 	cd $(ROOTLIBDIR64); \
-		$(RM) libtermlib.so libtermlib.so$(VERS);\
-		$(SYMLINK) libcurses.so$(VERS) libtermlib.so$(VERS); \
-		$(SYMLINK) libtermlib.so$(VERS) libtermlib.so;
+		$(RM) libsunw_termlib.so libsunw_termlib.so$(VERS);\
+		$(SYMLINK) libsunw_curses.so$(VERS) libsunw_termlib.so$(VERS); \
+		$(SYMLINK) libsunw_termlib.so$(VERS) libsunw_termlib.so;
 
 #
-# Install rules for libtermlib.ln links.
+# Install rules for libsunw_termlib.ln links.
 # Augments a pattern rule in Makefile.targ
 #
 $(ROOTLIBDIR)/$(LINTLIB) := INS.file= \
 	-$(RM) $@; $(INS) -s -m $(FILEMODE) -f $(@D) $(LINTLIB); \
 	cd $(ROOTLIBDIR); \
 		$(RM) llib-ltermlib.ln ; \
-		$(SYMLINK) ./llib-lcurses.ln llib-ltermlib.ln;
+		$(SYMLINK) ./llib-lsunw_curses.ln llib-lsunw_termlib.ln;
 
 $(ROOTLIBDIR64)/$(LINTLIB) := INS.file= \
 	-$(RM) $@; $(INS) -s -m $(FILEMODE) -f $(@D) $(LINTLIB); \
 	cd $(ROOTLIBDIR64); \
 		$(RM) llib-ltermlib.ln ; \
-		$(SYMLINK) ./llib-lcurses.ln llib-ltermlib.ln;
+		$(SYMLINK) ./llib-lsunw_curses.ln llib-lsunw_termlib.ln;
 
 #
 # Install rule for the lint source, which is installed only in
@@ -211,7 +212,7 @@ $(ROOTLINTDIR)/%: ../screen/%
 	$(INS.file)
 	cd $(ROOTLINTDIR); \
 		$(RM) llib-ltermlib ; \
-		$(SYMLINK) ./llib-lcurses llib-ltermlib;
+		$(SYMLINK) ./llib-lsunw_curses llib-lsunw_termlib;
 
 #
 # Include library targets

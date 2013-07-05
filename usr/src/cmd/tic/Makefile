@@ -21,6 +21,7 @@
 #
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= tic
@@ -38,7 +39,7 @@ SRCS= $(OBJS:%.o=%.c)
 
 include ../Makefile.cmd
 
-LDLIBS += -lcurses
+LDLIBS += -lsunw_curses
 CPPFLAGS += -I../../lib/libcurses/screen
 MAPFILES = $(MAPFILE.INT) $(MAPFILE.NGB)
 LDFLAGS += $(MAPFILES:%=-M%)
