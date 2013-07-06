@@ -23,11 +23,12 @@
  * Copyright (c) 2001 by Sun Microsystems, Inc.
  * All rights reserved.
  */
+/*
+ * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+ */
 
 #ifndef	_COMMON_H
 #define	_COMMON_H
-
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
 
 #include <stdio.h>
 #include <string.h>
@@ -66,6 +67,7 @@ struct flags {
 	char	*ofile;
 	int	fuzzy;
 	int	verbose;
+	int	version;
 	int	strict;
 	int	gnu_p;
 	int	sun_p;

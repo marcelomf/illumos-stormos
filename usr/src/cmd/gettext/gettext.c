@@ -23,6 +23,9 @@
  * Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
  * Use is subject to license terms.
  */
+/*
+ * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+ */
 
 /*	Copyright (c) 1983, 1984, 1985, 1986, 1987, 1988, 1989 AT&T	*/
 /*	  All Rights Reserved  	*/
@@ -31,8 +34,6 @@
  * Portions of this source code were derived from Berkeley 4.3 BSD
  * under license from the Regents of the University of California.
  */
-
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -106,12 +107,13 @@ main(int argc, char *argv[])	/* shell script equivalent of gettext(3) */
 	int	exp_flag = 0;
 	int	no_newline = 0;
 	int	echo_flag = 0;
+	int	ver_flag = 0;
 
 	(void) setlocale(LC_ALL, "");
 	(void) textdomain(TEXT_DOMAIN);
 
 	argv++;
-	while (--argc > 1) {
+	while (--argc > 0) {
 		arg = *argv;
 		if (*arg == '-') {
 			if (!*(arg + 1)) {
@@ -159,6 +161,11 @@ loop:
 					echo_flag = 1;
 					goto loop;
 					/* NOTREACHED */
+				case 'V':
+					/* print out version for intltool */
+					ver_flag = 1;
+					goto loop;
+					/* NOTREACHED */
 				default:
 					/* illegal option */
 					usage();
@@ -189,12 +196,25 @@ loop:
 				argv++;
 				continue;
 			}
+			if (strcmp(arg, "version") == 0) {
+				/* version */
+				arg += 7;
+				ver_flag = 1;
+				argv++;
+				continue;
+			}
 			/* illegal option */
 			usage();
 			/* NOTREACHED */
 		}
 		break;
 	}
+	
+	if (ver_flag) {
+		printf("illumos gettext version 5.11 (GNU compatible)\n");
+		exit(0);
+	}
+
 	if (argc == 0) {
 		usage();
 		/* NOTREACHED */

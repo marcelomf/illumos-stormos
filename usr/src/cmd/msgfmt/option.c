@@ -23,8 +23,9 @@
  * Copyright (c) 1996-2001 by Sun Microsystems, Inc.
  * All rights reserved.
  */
-
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
+/*
+ * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+ */
 
 #include "common.h"
 
@@ -37,7 +38,7 @@ parse_option(int *pargc, char ***pargv, struct flags *flag)
 	char	**argv = *pargv;
 
 	argv++;
-	while (--argc > 1) {
+	while (--argc > 0) {
 		arg = *argv;
 		if (*arg == '-') {
 			if (!*(arg + 1)) {
@@ -122,6 +123,12 @@ loop:
 					 */
 					flag->verbose = 1;
 					goto loop;
+				case 'V':
+					/*
+					 * print version
+					 */
+					flag->version = 1;
+					goto loop;
 				default:
 					/* illegal option */
 					return (-1);
@@ -196,14 +203,19 @@ loop:
 				argv++;
 				continue;
 			}
+			if (strcmp(arg, "version") == 0) {
+				/*
+				 * print version
+				 */
+				flag->version = 1;
+				argv++;
+				continue;
+			}
 			/* illegal option */
 			return (-1);
 		}
 		break;
 	}
-
-	if (argc == 0)
-		return (-1);
 
 	*pargc = argc;
 	*pargv = argv;

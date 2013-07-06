@@ -22,9 +22,8 @@
 /*
  * Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
  * Use is subject to license terms.
+ * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
  */
-
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
 
 #include "sun_msgfmt.h"
 
@@ -142,10 +141,19 @@ main(int argc, char **argv)
 	if (flag.verbose) {
 		verbose = 1;
 	}
+	if (flag.version) {
+		printf("illumos msgfmt version 5.11 (GNU compatible)\n");
+		return (0);
+	}
 
 	if (flag.gnu_p) {
 		/* invoke /usr/lib/gmsgfmt */
 		invoke_gnu_msgfmt();
+		/* NOTREACHED */
+	}
+
+	if (argc == 0) {
+		usage();
 		/* NOTREACHED */
 	}
 

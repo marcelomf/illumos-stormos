@@ -24,12 +24,15 @@
  * All rights reserved.
  * Use is subject to license terms.
  */
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
+/*
+ * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+ */
 
 #include	<ctype.h>
 #include	<stdio.h>
 #include	<stdlib.h>
 #include	<string.h>
+#include	<getopt.h>
 
 #define	TRUE	1
 #define	FALSE	0
@@ -41,6 +44,8 @@
 [-c comment-tag]\n	[-d default-domain] [-m prefix] \
 [-M suffix] [-p pathname] files ...\n\
 	xgettext -h\n"
+
+#define	VERSION "illumos xgettext version 5.11 (GNU compatible)\n"
 
 #define	DEFAULT_DOMAIN	"messages"
 
@@ -138,6 +143,7 @@ static int	pflg = FALSE;
 static char	*pathname = NULL;
 static int	sflg = FALSE;
 static int	tflg = FALSE;	/* Undocumented option to extract dcgettext */
+static int	Vflg = FALSE;	/* Undocumented option to print out version */
 static int	xflg = FALSE;
 static char	*exclude_file = NULL;
 
@@ -261,7 +267,12 @@ main(int argc, char **argv)
 
 	initialize_globals();
 
-	while ((c = getopt(argc, argv, "jhax:nsc:d:m:M:p:t")) != EOF) {
+	struct option long_options[] = {
+		{"version", no_argument, 0, 'V'}
+	};
+
+	while ((c = getopt_long(argc, argv, "jhaVx:nsc:d:m:M:p:t",
+				long_options, NULL)) != EOF) {
 		switch (c) {
 		case 'a':
 			aflg = TRUE;
@@ -300,6 +311,9 @@ main(int argc, char **argv)
 		case 't':
 			tflg = TRUE;
 			break;
+		case 'V':
+			Vflg = TRUE;
+			break;
 		case 'x':
 			xflg = TRUE;
 			exclude_file = optarg;
@@ -314,6 +328,12 @@ main(int argc, char **argv)
 	if (hflg == TRUE) {
 		(void) fprintf(stderr, USAGE);
 		print_help();
+		exit(0);
+	}
+
+	/* if -v is used, ingore all other options. */
+	if (Vflg == TRUE) {
+		(void) fprintf(stdout, VERSION);
 		exit(0);
 	}
 
