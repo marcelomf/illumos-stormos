@@ -22,6 +22,7 @@
 #
 # Copyright (c) 1989, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright (c) 2012 by Delphix. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 #
@@ -572,7 +573,7 @@ CLOBBERFILES += $(POFILE) $(POFILES)
 COMPILE.cpp= $(CC) -E -C $(CFLAGS) $(CPPFLAGS)
 XGETTEXT= /usr/bin/xgettext
 XGETFLAGS= -c TRANSLATION_NOTE
-GNUXGETTEXT= /usr/gnu/bin/xgettext
+GNUXGETTEXT= /usr/bin/gxgettext
 GNUXGETFLAGS= --add-comments=TRANSLATION_NOTE --keyword=_ \
 	--strict --no-location --omit-header
 BUILD.po= $(XGETTEXT) $(XGETFLAGS) -d $(<F) $<.i ;\

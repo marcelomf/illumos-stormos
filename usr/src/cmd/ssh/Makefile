@@ -22,6 +22,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include		../Makefile.cmd
@@ -75,7 +76,7 @@ check: $(CHECKHDRS)
 _msg:
 	$(RM) $(POFILE)
 	$(TOUCH) $(POFILE)
-	$(MAKE) $(POFILE) XGETTEXT=/usr/bin/gxgettext
+	$(MAKE) $(POFILE) XGETTEXT=$(GNUXGETTEXT)
 	$(CP) $(POFILE) $(MSGFILE)
 	$(CP) $(MSGFILE) $(MSGDOMAIN)
 
