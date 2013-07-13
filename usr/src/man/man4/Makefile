@@ -12,6 +12,7 @@
 #
 # Copyright 2011, Richard Lowe
 # Copyright 2011 Nexenta Systems, Inc. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include ../../Makefile.master
@@ -145,8 +146,6 @@ COMMON_MANFILES = 	Intro.4				\
 		 	path_to_inst.4			\
 		 	pci.4				\
 		 	phones.4			\
-		 	pkginfo.4			\
-		 	pkgmap.4			\
 		 	policy.conf.4			\
 		 	power.conf.4			\
 		 	printers.4			\

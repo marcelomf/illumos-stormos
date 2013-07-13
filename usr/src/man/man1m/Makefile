@@ -373,11 +373,6 @@ COMMON_MANFILES = 	6to4relay.1m		\
 	 	 	pbind.1m		\
 	 	 	picld.1m		\
 	 	 	ping.1m			\
-	 	 	pkgadd.1m		\
-	 	 	pkgadm.1m		\
-	 	 	pkgask.1m		\
-	 	 	pkgchk.1m		\
-	 	 	pkgrm.1m		\
 	 	 	plockstat.1m		\
 	 	 	pmadm.1m		\
 	 	 	pmconfig.1m		\

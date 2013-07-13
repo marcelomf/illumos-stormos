@@ -10,8 +10,8 @@
 #
 
 # Copyright 2011, Richard Lowe
-
 # Copyright 2013 Johann 'Myrkraverk' Oskarsson <johann@myrkraverk.com>
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 
 include ../../Makefile.master
 
@@ -273,11 +273,6 @@ MANFILES=	acctcom.1			\
 	 	pfexec.1			\
 	 	pg.1				\
 	 	pgrep.1				\
-	 	pkginfo.1			\
-	 	pkgmk.1				\
-	 	pkgparam.1			\
-	 	pkgproto.1			\
-	 	pkgtrans.1			\
 	 	pktool.1			\
 	 	plabel.1			\
 	 	plgrp.1				\

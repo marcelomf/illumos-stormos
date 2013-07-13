@@ -391,7 +391,6 @@ COMMON_SUBDIRS=		\
 	sulogin		\
 	sunpc		\
 	svc		\
-	svr4pkg		\
 	swap		\
 	sync		\
 	sysdef		\
@@ -701,7 +700,6 @@ MSGSUBDIRS=		\
 	strings		\
 	su		\
 	svc		\
-	svr4pkg		\
 	swap		\
 	syseventadm	\
 	syseventd	\
