@@ -19,6 +19,7 @@
  * CDDL HEADER END
  */
 /*
+ * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
  * Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
  * Use is subject to license terms.
  */
@@ -43,7 +44,7 @@
 #include	"tmstruct.h"
 #include	"tmextern.h"
 #ifdef	SYS_NAME
-#include	<sys/utsname.h>
+#include	<sys/systeminfo.h>
 #endif
 
 static void openline();
@@ -379,24 +380,54 @@ void
 sys_name(fd)
 int	fd;
 {
-	char	*ptr, buffer[BUFSIZ];
+	char	c, buffer[BUFSIZ];
 	FILE	*fp;
+	time_t	t;
 
-#if 0	/* 1111333 - don't print node name, we already do this elsewhere */
-	struct	utsname utsname;
+	if ((fp = fopen(ISSUEFILE, "r")) == NULL)
+		return;
 
-	if (uname(&utsname) != FAILURE) {
-		(void) sprintf(buffer, "%.9s\r\n", utsname.nodename);
+	while ((c = fgetc(fp)) != EOF) {
+		switch (c) {
+			case '\\': /* special codes */
+				switch (c = fgetc(fp)) {
+					case EOF: /* end of file */
+						(void) fclose(fp);
+						return;
+					case 's': /* sysname */
+						sysinfo(SI_SYSNAME, buffer, BUFSIZ);
+						break;
+					case 'n': /* nodename */
+						sysinfo(SI_HOSTNAME, buffer, BUFSIZ);
+						break;
+					case 'r': /* release */
+						sysinfo(SI_RELEASE, buffer, BUFSIZ);
+						break;
+					case 'm': /* machine */
+						sysinfo(SI_MACHINE, buffer, BUFSIZ);
+						break;
+					case 'O': /* FIXME: domain */
+						strcpy(buffer, "localdomain");
+						break;
+					case 't': /* time */
+						strftime(buffer, BUFSIZ, "%H:%M:%S", localtime(&t));
+						break;
+					default: /* unknown */
+						buffer[0] = c;
+						buffer[1] = '\0';
+				}
+				break;
+			case '\n': /* newlines */
+				strcpy(buffer, "\n\r");
+				break;
+			default: /* plain text */
+				buffer[0] = c;
+				buffer[1] = '\0';
+		}
 		(void) write(fd, buffer, strlen(buffer));
 	}
-#endif
 
-	if ((fp = fopen(ISSUEFILE, "r")) != NULL) {
-		while ((ptr = fgets(buffer, sizeof (buffer), fp)) != NULL) {
-			(void) write(fd, ptr, strlen(ptr));
-		}
-		(void) fclose(fp);
-	}
+	(void) fclose(fp);
 }
 #endif
 
