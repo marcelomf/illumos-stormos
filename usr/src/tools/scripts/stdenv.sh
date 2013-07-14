@@ -34,20 +34,6 @@
 #
 
 #
-# the source product has no SCCS history, and is modified to remove source
-# that cannot be shipped. EXPORT_SRC is where the clear files are copied, then
-# modified with 'make EXPORT_SRC'.
-#
-[ -n "$EXPORT_SRC" ] || export EXPORT_SRC="$CODEMGR_WS/export_src"
-
-#
-# CRYPT_SRC is similar to EXPORT_SRC, but after 'make CRYPT_SRC' the files in
-# xmod/cry_files are saved. They are dropped on the exportable source to create
-# the domestic build.
-#
-[ -n "$CRYPT_SRC" ] || export CRYPT_SRC="$CODEMGR_WS/crypt_src"
-
-#
 # OPEN_SRCDIR is where we copy the open tree to so that we can be sure
 # we don't have a hidden dependency on closed code.  The name ends in
 # "DIR" to avoid confusion with the flags related to open source

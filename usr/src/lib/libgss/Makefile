@@ -73,24 +73,4 @@ FRC:
 # include library targets
 include ../Makefile.targ
 
-# EXPORT DELETE START
-# Special target to clean up the source tree for export distribution
-# Warning: This target changes the source tree
-
-EXPORT_SRC:
-	$(RM) Makefile+ g_seal.c+ g_unseal.c+
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" \
-		< g_seal.c > g_seal.c+
-	$(MV) g_seal.c+ g_seal.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" \
-		< g_unseal.c > g_unseal.c+
-	$(MV) g_unseal.c+ g_unseal.c
-	sed -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d" \
-		< Makefile > Makefile+
-	$(MV) Makefile+ Makefile
-	$(CHMOD) 444 Makefile g_seal.c g_unseal.c
-
-# EXPORT DELETE END
-
-
 include $(SRC)/Makefile.msg.targ

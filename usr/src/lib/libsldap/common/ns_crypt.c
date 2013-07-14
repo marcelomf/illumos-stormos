@@ -40,10 +40,7 @@
 #include <sys/time.h>
 #include "ns_sldap.h"
 #include "ns_internal.h"
-/* EXPORT DELETE START */
 #include <crypt.h>
-
-#define	NS_DOMESTIC	1
 
 static	char		t1[ROTORSIZE];
 static	char		t2[ROTORSIZE];
@@ -113,13 +110,11 @@ ascii2hex(char *anHexaStr, int *aResLen)
 	*aResLen = theLen;
 	return (theRes);
 }
-/* EXPORT DELETE END */
 
 
 static void
 c_setup()
 {
-/* EXPORT DELETE START */
 	int ic, i, k, temp;
 	unsigned random;
 	char buf[13];
@@ -190,14 +185,12 @@ modvalue(char *str, int len, int *mod_len)
 		    *mod_len = i;
 	}
 	return (s);
-/* EXPORT DELETE END */
 }
 
 
 char *
 evalue(char *ptr)
 {
-/* EXPORT DELETE START */
 	char *modv, *str, *ev;
 	int modv_len;
 	size_t len;
@@ -225,19 +218,12 @@ evalue(char *ptr)
 	free(str);
 	str = NULL;
 	return (ev);
-#ifndef NS_DOMESTIC
-/* EXPORT DELETE END */
-	return (strdup(ptr));
-/* EXPORT DELETE START */
-#endif
-/* EXPORT DELETE END */
 }
 
 
 char *
 dvalue(char *ptr)
 {
-/* EXPORT DELETE START */
 	char *modv, *str, *sb;
 	int len;
 
@@ -253,10 +239,4 @@ dvalue(char *ptr)
 	free(str);
 	str = NULL;
 	return (modv);
-#ifndef NS_DOMESTIC
-/* EXPORT DELETE END */
-	return (strdup(ptr));
-/* EXPORT DELETE START */
-#endif
-/* EXPORT DELETE END */
 }

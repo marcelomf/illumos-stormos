@@ -52,7 +52,6 @@ extern "C" {
 #define	static
 #endif
 
-/* EXPORT DELETE START */
 /*
  * Permuted-choice 1 from the key bits
  * to yield C and D.
@@ -1081,7 +1080,6 @@ const 	uint32_t	P_tab[4][256] = {
 	0x0a100401U, 0x0a100c01U, 0x0a120401U, 0x0a120c01U,
 	0x0a100421U, 0x0a100c21U, 0x0a120421U, 0x0a120c21U,
 };
-/* EXPORT DELETE END */
 
 #ifdef	__cplusplus
 }

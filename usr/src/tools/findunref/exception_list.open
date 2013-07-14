@@ -175,7 +175,6 @@
 ./usr/src/uts/common/gssapi/include/Makefile
 ./usr/src/uts/common/gssapi/mechs/dummy/Makefile
 ./usr/src/uts/common/gssapi/mechs/krb5/Makefile
-./usr/src/xmod
 
 #
 # Ignore Makefiles which are used by developers but not used by nightly

@@ -162,7 +162,6 @@ des_setparity_g(des_block *p)
 int
 __des_crypt(char *buf, unsigned len, struct desparams *desp)
 {
-/* EXPORT DELETE START */
 	short i;
 	unsigned mode;
 	unsigned dir;
@@ -201,7 +200,6 @@ __des_crypt(char *buf, unsigned len, struct desparams *desp)
 		buf += 8;
 		len -= 8;
 	}
-/* EXPORT DELETE END */
 	return (1);
 }
 
@@ -213,7 +211,6 @@ __des_crypt(char *buf, unsigned len, struct desparams *desp)
 static int
 __des_setkey(uchar_t userkey[8], struct deskeydata *kd, unsigned dir)
 {
-/* EXPORT DELETE START */
 	int32_t C, D;
 	short i;
 
@@ -293,7 +290,6 @@ __des_setkey(uchar_t userkey[8], struct deskeydata *kd, unsigned dir)
 		}
 
 	}
-/* EXPORT DELETE END */
 	return (1);
 }
 
@@ -309,7 +305,6 @@ __des_setkey(uchar_t userkey[8], struct deskeydata *kd, unsigned dir)
 static int
 __des_encrypt(uchar_t *data, struct deskeydata *kd)
 {
-/* EXPORT DELETE START */
 	chunk_t work1, work2;
 
 	/*
@@ -476,6 +471,5 @@ __des_encrypt(uchar_t *data, struct deskeydata *kd)
 	data[6] = work2.byte6;
 	data[7] = work2.byte7;
 
-/* EXPORT DELETE END */
 	return (1);
 }

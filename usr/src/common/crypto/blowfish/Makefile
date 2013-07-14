@@ -31,20 +31,3 @@ include $(SRC)/Makefile.master
 .KEEP_STATE:
 
 FRC:
-
-# EXPORT DELETE START
-EXPORT_SRC:
-	$(RM) Makefile+ blowfish_impl.c+ blowfish_impl.h+
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" \
-		< blowfish_impl.c > blowfish_impl.c+
-	$(MV) blowfish_impl.c+ blowfish_impl.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" \
-		< blowfish_impl.h > blowfish_impl.h+
-	$(MV) blowfish_impl.h+ blowfish_impl.h
-	sed -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d" \
-		< Makefile > Makefile+
-	$(RM) Makefile
-	$(MV) Makefile+ Makefile 
-	$(CHMOD) 444 Makefile blowfish_impl.c blowfish_impl.h
-
-# EXPORT DELETE END

@@ -401,11 +401,7 @@ ldap_version( LDAPVersion *ver )
 
 		ver->security_level = LDAP_SECURITY_NONE;
 #if defined(LINK_SSL)
-#if defined(NS_DOMESTIC)
 		ver->security_level = 128;
-#elif defined(NSS_EXPORT)
-		ver->security_level = 40;
-#endif
 #endif
 
 	}

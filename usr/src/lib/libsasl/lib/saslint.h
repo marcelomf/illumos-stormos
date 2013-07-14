@@ -212,13 +212,9 @@ struct sasl_conn {
 
 #ifdef _SUN_SDK_
   struct _sasl_global_context_s *gctx;
-  /* EXPORT DELETE START */
-  /* CRYPT DELETE START */
 #ifdef _INTEGRATED_SOLARIS_
   int sun_reg;
 #endif /* _INTEGRATED_SOLARIS_ */
-  /* CRYPT DELETE END */
-  /* EXPORT DELETE END */
 #endif /* _SUN_SDK_ */
 };
 
@@ -240,13 +236,9 @@ typedef struct mechanism
 		      set to SASL_CONTINUE if delayed plugn loading */
     char *plugname; /* for AUTHSOURCE tracking */
 #ifdef _SUN_SDK_
-    /* EXPORT DELETE START */
-    /* CRYPT DELETE START */
 #ifdef _INTEGRATED_SOLARIS_
     int sun_reg;
 #endif /* _INTEGRATED_SOLARIS_ */
-    /* CRYPT DELETE END */
-    /* EXPORT DELETE END */
     sasl_server_plug_t *plug;
 	/*
 	 * The global context needs to be stored with separately from the	
@@ -298,13 +290,9 @@ typedef struct cmechanism
 
     char *plugname;
 #ifdef _SUN_SDK_
-    /* EXPORT DELETE START */
-    /* CRYPT DELETE START */
 #ifdef _INTEGRATED_SOLARIS_
     int sun_reg;
 #endif /* _INTEGRATED_SOLARIS_ */
-    /* CRYPT DELETE END */
-    /* EXPORT DELETE END */
 	/*
 	 * The global context needs to be stored with separately from the	
 	 * the plugin because it will be overwritten when the plugin is
@@ -803,13 +791,9 @@ extern int _sasl_auxprop_add_plugin(void *ctx,
 
 _sasl_global_context_t *_sasl_gbl_ctx(void);
 
-/* EXPORT DELETE START */
-/* CRYPT DELETE START */
 #ifdef _INTEGRATED_SOLARIS_
 int _is_sun_reg(void *mech);
 #endif /* _INTEGRATED_SOLARIS_ */
-/* CRYPT DELETE END */
-/* EXPORT DELETE END */
 
 /* unsupported functions that are used internally */
 int sasl_randcreate(sasl_rand_t **rpool);

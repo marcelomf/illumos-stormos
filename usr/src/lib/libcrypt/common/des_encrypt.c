@@ -37,7 +37,6 @@ void
 des_encrypt1(char *block, char *L, char *IP, char *R, char *preS, char *E,
 	char KS[][48], char S[][64], char *f, char *tempL, char *P, char *FP)
 {
-/* EXPORT DELETE START */
 	int	i;
 	int	t, j, k;
 	char	t2;
@@ -115,5 +114,4 @@ des_encrypt1(char *block, char *L, char *IP, char *R, char *preS, char *E,
 	 */
 	for (j = 0; j < 64; j++)
 		block[j] = L[FP[j]-1];
-/* EXPORT DELETE END */
 }

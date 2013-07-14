@@ -1,5 +1,3 @@
-/* EXPORT DELETE START */
-
 /*
  * Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
  * Use is subject to license terms.
@@ -91,5 +89,3 @@ krb5_gss_wrap(minor_status, context_handle, conf_req_flag,
 		   output_message_buffer, KG_TOK_WRAP_MSG));
 #endif
 }
-
-/* EXPORT DELETE END */

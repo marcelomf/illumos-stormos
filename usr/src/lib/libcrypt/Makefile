@@ -48,30 +48,3 @@ $(SUBDIRS):      FRC
 FRC:
 
 include ../Makefile.targ
-
-# EXPORT DELETE START
-EXPORT_SRC:
-	$(RM) common/des.c+ common/des_crypt.c+ common/des_soft.c+ \
-		common/des_decrypt.c+ common/des_encrypt.c+  \
-		Makefile+
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" < \
-		common/des.c > common/des.c+
-	$(MV) common/des.c+ common/des.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" < \
-		common/des_crypt.c > common/des_crypt.c+
-	$(MV) common/des_crypt.c+ common/des_crypt.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" < \
-		common/des_soft.c > common/des_soft.c+
-	$(MV) common/des_soft.c+ common/des_soft.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" < \
-		common/des_encrypt.c > common/des_encrypt.c+
-	$(MV) common/des_encrypt.c+ common/des_encrypt.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" < \
-		common/des_decrypt.c > common/des_decrypt.c+
-	$(MV) common/des_decrypt.c+ common/des_decrypt.c
-	sed -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d" \
-		< Makefile > Makefile+
-	$(MV) Makefile+ Makefile
-	$(CHMOD) 444 Makefile common/des.c common/des_crypt.c \
-		common/des_soft.c common/des_encrypt.c common/des_decrypt.c
-# EXPORT DELETE END

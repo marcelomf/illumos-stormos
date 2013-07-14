@@ -50,23 +50,4 @@ install_h: $(ROOTDIRS) $(ROOTHDRS)
 $(ROOTDIRS):
 	$(INS.dir)
 
-# EXPORT DELETE START
-EXPORT_SRC:
-	$(RM) Makefile+ des_crypt.c+ des_soft.c+ desdata.h+
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" \
-		< des_crypt.c > des_crypt.c+
-	$(MV) des_crypt.c+ des_crypt.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" \
-		< des_soft.c > des_soft.c+
-	$(MV) des_soft.c+ des_soft.c
-	sed -e "/EXPORT DELETE START/,/EXPORT DELETE END/d" \
-		< desdata.h > desdata.h+
-	$(MV) desdata.h+ desdata.h
-	sed -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d" \
-		< Makefile > Makefile+
-	$(RM) Makefile
-	$(MV) Makefile+ Makefile
-	$(CHMOD) 444 Makefile des_crypt.c des_soft.c desdata.h
-
-# EXPORT DELETE END
 check:	$(CHECKHDRS)

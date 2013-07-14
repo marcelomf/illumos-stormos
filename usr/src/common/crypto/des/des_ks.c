@@ -28,8 +28,6 @@
 
 #pragma ident	"%Z%%M%	%I%	%E% SMI"
 
-/* EXPORT DELETE START */
-
 static uint64_t pc1_table[2][128]=
 {
 /* BEGIN CSTYLED */
@@ -290,5 +288,3 @@ des_ks(uint64_t *ks, uint64_t key)
 		ks[i] = ((uint64_t)upper)<<32 | ((uint64_t)lower);
 	}
 }
-
-/* EXPORT DELETE END */

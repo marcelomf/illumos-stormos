@@ -41,13 +41,6 @@ clobber :=	TARGET= clobber
 install :=	TARGET= install
 lint :=		TARGET= lint
 
-# EXPORT DELETE START
-# CRYPT DELETE START
-EXPORT_SRC :=	TARGET= EXPORT_SRC
-CRYPT_SRC :=	TARGET= CRYPT_SRC
-# CRYPT DELETE END
-# EXPORT DELETE END
-
 .KEEP_STATE:
 
 all clean clobber install lint: $(SUBDIRS)
@@ -59,36 +52,6 @@ _msg:		$(MSGDOMAINPOFILE)
 
 $(SUBDIRS):	FRC
 	@cd $@; pwd; $(MAKE) $(TARGET)
-
-# EXPORT DELETE START
-# CRYPT DELETE START
-# Special target to clean up the source tree for export distribution
-# Warning: This target changes the source tree
-EXPORT_SRC:
-	$(SED) -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d"	\
-		< Makefile.com > Makefile.com+
-	$(MV) Makefile.com+ Makefile.com
-	$(CHMOD) 444 Makefile.com
-	$(SED) -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d"	\
-		< Makefile > Makefile+
-	$(MV) Makefile+ Makefile
-	$(CHMOD) 444 Makefile
-
-CRYPT_SRC:
-	$(SED) -e "/^# CRYPT DELETE START/,/^# CRYPT DELETE END/d"	\
-		< Makefile.com \
-	    | $(SED) -e "/EXPORT DELETE/d" \
-		> Makefile.com+
-	$(MV) Makefile.com+ Makefile.com
-	$(CHMOD) 444 Makefile.com
-	$(SED) -e "/^# CRYPT DELETE START/,/^# CRYPT DELETE END/d"	\
-		< Makefile \
-	    | $(SED) -e "/EXPORT DELETE/d" \
-		> Makefile+
-	$(MV) Makefile+ Makefile
-	$(CHMOD) 444 Makefile
-# CRYPT DELETE END
-# EXPORT DELETE END
 
 FRC:
 

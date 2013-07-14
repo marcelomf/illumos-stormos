@@ -92,14 +92,6 @@ lint.platmod:   modlintlib
 	@-$(ECHO) "\n$(IMPLEMENTED_PLATFORM) platform-dependent module: global crosschecks:"
 	@-$(LINT) $(LINTFLAGS) $(LINT_LIBS) 2>&1 | $(LGREP.2)
 
-EXPORT_SRC:
-	$(RM) Makefile+	
-	sed -e "/^# EXPORT DELETE START/,/^# EXPORT DELETE END/d" \
-		< Makefile > Makefile+
-	$(MV) Makefile+ Makefile
-	$(CHMOD) 444 Makefile
-# EXPORT DELETE END
-
 #
 #	Include common targets.
 #

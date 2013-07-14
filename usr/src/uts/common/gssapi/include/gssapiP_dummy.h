@@ -215,7 +215,7 @@ DUMMY_STATIC OM_uint32 dummy_gss_verify
 
 #endif
 	/* */);
-/* EXPORT DELETE START */
+
 DUMMY_STATIC OM_uint32 dummy_gss_seal
 	(
 		void *,			/* dummy context */
@@ -244,7 +244,6 @@ DUMMY_STATIC OM_uint32 dummy_gss_unseal
 	/* */, OM_uint32
 #endif
 	/* */);
-/* EXPORT DELETE END */
 
 OM_uint32 dummy_gss_display_status
 	(

@@ -54,7 +54,6 @@ mit_des_string_to_key_int (krb5_context context,
 	const krb5_data *salt)
 {
     krb5_error_code retval = KRB5_PROG_ETYPE_NOSUPP;
-/* EXPORT DELETE START */
     register char *str, *copystr;
     register krb5_octet *key;
     register unsigned temp;
@@ -180,6 +179,5 @@ mit_des_string_to_key_int (krb5_context context,
 	keyblock->hKey = CK_INVALID_HANDLE;
      }
 
-/* EXPORT DELETE END */
     return retval;
 }

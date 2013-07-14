@@ -265,7 +265,6 @@ struct gss_verify_res {
 	OM_UINT32	status;			/* status of GSSAPI call */
 };
 
-%/* EXPORT DELETE START */
 struct gss_seal_arg {
 	OM_UINT32	gssd_context_verifier;	/* verifier for context handles */
 	GSS_CTX_ID_T	context_handle;		/* handle to existing context */
@@ -294,8 +293,6 @@ struct gss_unseal_res {
 	int		qop_state;		/* quality of prot. provided */
 	OM_UINT32	status;			/* status of GSSAPI call */
 };
-
-%/* EXPORT DELETE END */
 
 struct gss_display_status_arg {
 	uid_t		uid;			/* client uid */
@@ -482,8 +479,6 @@ program GSSPROG {
 		GSS_INQUIRE_CRED(gss_inquire_cred_arg)			= 12;
 
 
-/* EXPORT DELETE START */
-
 	/*
 	 *  Called to seal a message.
 	 */
@@ -493,8 +488,6 @@ program GSSPROG {
 	 *  Called to unseal a message.
 	 */
 	gss_unseal_res	GSS_UNSEAL(gss_unseal_arg)			= 14;
-
-/* EXPORT DELETE END */
 
 	/*
 	 * gsscred interface functions to obtain principal uid and gids
