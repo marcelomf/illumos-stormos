@@ -65,7 +65,7 @@ static char	*inputdir;
 
 extern void	check_gnu(char *, size_t);
 
-#define	GNU_MSGFMT	"/usr/lib/gmsgfmt"
+#define	GNU_MSGFMT	"/usr/bin/gmsgfmt"
 void
 invoke_gnu_msgfmt(void)
 {
