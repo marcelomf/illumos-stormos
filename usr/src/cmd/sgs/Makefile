@@ -20,6 +20,7 @@
 #
 #
 # Copyright (c) 1991, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include		$(SRC)/cmd/Makefile.cmd
@@ -98,6 +99,7 @@ MSGDIR=		messages
 
 all :=		TARGET= all
 install :=	TARGET= install
+install_h :=	TARGET= install_h
 clean :=	TARGET= clean
 clobber :=	TARGET= clobber
 delete :=	TARGET= delete
@@ -113,6 +115,8 @@ chkmsg :=	TARGET= chkmsg
 .PARALLEL:	$(SUBDIRS)
 
 all install:	native-add .WAIT $(SUBDIRS)
+
+install_h:	libelf
 
 include		$(SRC)/cmd/Makefile.targ
 

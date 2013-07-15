@@ -21,6 +21,7 @@
 
 #
 # Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		elfdump
@@ -52,7 +53,7 @@ CPPFLAGS=	-I. -I../common -I../../include -I../../include/$(MACH) \
 LLDFLAGS =	$(VAR_ELFDUMP_LLDFLAGS)
 LLDFLAGS64 =	$(VAR_ELFDUMP_LLDFLAGS64)
 LDFLAGS +=	$(VERSREF) $(CC_USE_PROTO) $(MAPOPT) $(LLDFLAGS)
-LDLIBS +=	$(ELFLIBDIR) -lelf $(LDDBGLIBDIR) $(LDDBG_LIB) \
+LDLIBS +=	$(ELFLIBDIR) -lsunw_elf $(LDDBGLIBDIR) $(LDDBG_LIB) \
 		    $(CONVLIBDIR) $(CONV_LIB)
 
 LINTFLAGS +=	-x

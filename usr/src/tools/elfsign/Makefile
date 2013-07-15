@@ -22,6 +22,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		elfsign
@@ -43,11 +44,12 @@ CFLAGS += $(CCVERBOSE)
 CFLAGS += -_gcc=-fasm
 
 CPPFLAGS += -D_POSIX_PTHREAD_SEMANTICS
+CPPFLAGS +=	-I$(SRC)/cmd/sgs/libelf/common
 CPPFLAGS +=	-I$(SRC)/lib/libelfsign/common
 CPPFLAGS +=	-I$(SRC)/uts/common
 CPPFLAGS +=	-I$(SRC)/lib/libkmf/include
 CPPFLAGS +=	-I$(SRC)/lib/libcryptoutil/common
-LDFLAGS +=	-lmd -lelf -lkmf -lcryptoutil -lc
+LDFLAGS +=	-lmd -lsunw_elf -lkmf -lcryptoutil -lc
 
 CERRWARN += -_gcc=-Wno-unused
 

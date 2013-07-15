@@ -21,6 +21,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=	sysdef
@@ -29,7 +30,7 @@ SRCS=	$(OBJS:%.o=../%.c)
 
 include ../../Makefile.cmd
 
-LDLIBS	+= -ldevinfo -lelf
+LDLIBS	+= -ldevinfo -lsunw_elf
 CERRWARN += -_gcc=-Wno-parentheses
 
 FILEMODE= 02555

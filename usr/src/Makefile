@@ -199,6 +199,7 @@ sysheaders: FRC
 cmdheaders: FRC
 	@cd cmd/fm; pwd; $(MAKE) install_h
 	@cd cmd/mdb; pwd; $(MAKE) install_h
+	@cd cmd/sgs; pwd; $(MAKE) install_h
 
 check:	$(CHKHDRSUBDIRS) $(CHKMFSTSUBDIRS)
 

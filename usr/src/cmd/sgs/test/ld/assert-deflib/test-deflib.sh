@@ -12,6 +12,7 @@
 
 #
 # Copyright (c) 2012, Joyent, Inc.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 #
@@ -106,26 +107,26 @@ run "-Wl,-zassert-deflib=libf.s -Wl,-zfatal-warnings" 1 \
     "Testing invalid library name..." \
     "ld should not allow invalid library name"
 
-run "-Wl,-zassert-deflib=libc.so -Wl,-zfatal-warnings -lelf" 1 \
+run "-Wl,-zassert-deflib=libc.so -Wl,-zfatal-warnings -lsunw_elf" 1 \
     "Errors even if one library is under exception path..." \
     "one exception shouldn't stop another"
 
 args="-Wl,-zassert-deflib=libc.so -Wl,-zassert-deflib=libelf.so"
-args="$args -Wl,-zfatal-warnings -lelf"
+args="$args -Wl,-zfatal-warnings -lsunw_elf"
 
 run "$args" 0 \
     "Multiple exceptions work..." \
     "multiple exceptions don't work"
 
 args="-Wl,-zassert-deflib=libc.so -Wl,-zassert-deflib=libelfe.so"
-args="$args -Wl,-zfatal-warnings -lelf"
+args="$args -Wl,-zfatal-warnings -lsunw_elf"
 
 run "$args" 1 \
     "Exceptions only catch the specific library" \
     "exceptions caught the wrong library"
 
 args="-Wl,-zassert-deflib=libc.so -Wl,-zassert-deflib=libel.so"
-args="$args -Wl,-zfatal-warnings -lelf"
+args="$args -Wl,-zfatal-warnings -lsunw_elf"
 
 run "$args" 1 \
     "Exceptions only catch the specific library" \

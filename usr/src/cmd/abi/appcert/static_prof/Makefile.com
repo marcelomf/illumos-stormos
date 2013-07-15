@@ -22,6 +22,7 @@
 #
 # Copyright (c) 1997-2000 by Sun Microsystems, Inc.
 # All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/abi/appcert/static_prof/Makefile.com
 #
@@ -35,7 +36,7 @@ SRCS = $(PROG:%=../%.c)
 CFLAGS	+=	$(LDLIBS)
 CERRWARN +=	-_gcc=-Wno-unused-value
 CERRWARN +=	-_gcc=-Wno-parentheses
-LDLIBS	=	-lelf
+LDLIBS	=	-lsunw_elf
 
 LINTFLAGS =	-nmxsuF -errtags=yes
 LINTLIBS +=	$(LDLIBS)

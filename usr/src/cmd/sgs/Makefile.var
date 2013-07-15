@@ -21,6 +21,7 @@
 
 #
 # Copyright (c) 2003, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 # The link-editor related source files and Makefile files have at times been
@@ -81,6 +82,14 @@ VAR_AVLINCDIR=		-I $(SRCBASE)/uts/common
 VAR_DTRDIR=             $(SRCBASE)/common/dtrace
 
 #
+# VAR_LIBELFDIR - directory to find libelf.h in.
+#
+# This is the location of the libelf source.
+#
+VAR_LIBELFDIR=		$(SRCBASE)/cmd/sgs/libelf
+VAR_LIBELFINCDIR=	-I $(VAR_LIBELFDIR)/common
+
+#
 # VAR_SGSBINPROG
 #
 # For Solaris 10 and earlier releases, the SGS components were installed in
@@ -129,7 +138,7 @@ VAR_LIBLD_64_ROOTFS_LIBDIR=	$(ROOT)/lib/$(MACH64)
 #
 # Tools
 #
-VAR_TOOLS_CPPFLAGS=		$(VAR_AVLINCDIR)
+VAR_TOOLS_CPPFLAGS=		$(VAR_AVLINCDIR) $(VAR_LIBELFINCDIR)
 
 #
 # liblddbg

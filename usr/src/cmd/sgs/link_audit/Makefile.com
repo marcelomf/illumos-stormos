@@ -21,6 +21,7 @@
 
 #
 # Copyright (c) 1996, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include		../../../../lib/Makefile.lib
@@ -73,7 +74,7 @@ $(BINDLIB):=	PICS = $(BINDPICS)
 
 $(TRUSSLIB):=	LDLIBS += $(ZRECORD) -lmapmalloc -lc
 $(PERFLIB):=	LDLIBS += $(ZRECORD) -lmapmalloc -lc
-$(WHOLIB):=	LDLIBS += $(ELFLIBDIR) -lelf $(ZRECORD) -lmapmalloc $(DLLIB) -lc
+$(WHOLIB):=	LDLIBS += $(ELFLIBDIR) -lsunw_elf $(ZRECORD) -lmapmalloc $(DLLIB) -lc
 $(SYMBINDREP):=	LDLIBS += $(ZRECORD) -lmapmalloc -lc
 $(BINDLIB):=	LDLIBS += $(ZRECORD) -lmapmalloc -lc
 

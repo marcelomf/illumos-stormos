@@ -21,6 +21,7 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= strings
@@ -28,7 +29,7 @@ SRCS= ../$(PROG).c
 
 include ../../Makefile.cmd
 
-LDLIBS += -lelf
+LDLIBS += -lsunw_elf
 
 CFLAGS += $(CCVERBOSE)
 CFLAGS64 += $(CCVERBOSE)

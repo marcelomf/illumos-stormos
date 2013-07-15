@@ -20,6 +20,7 @@
 #
 #
 # Copyright (c) 1996, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		ar
@@ -42,7 +43,7 @@ CFLAGS +=	$(CCVERBOSE)
 C99MODE=	$(C99_ENABLE)
 
 CERRWARN +=	-_gcc=-Wno-uninitialized
-LDLIBS +=	-lelf $(CONVLIBDIR) $(CONV_LIB) -lsendfile
+LDLIBS +=	-lsunw_elf $(CONVLIBDIR) $(CONV_LIB) -lsendfile
 LINTFLAGS=	-x
 LINTFLAGS64=	-x
 

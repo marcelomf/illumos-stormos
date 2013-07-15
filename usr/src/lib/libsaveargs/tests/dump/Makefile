@@ -11,6 +11,7 @@
 
 #
 # Copyright 2012, Richard Lowe.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include $(SRC)/Makefile.master
@@ -23,7 +24,7 @@ PROG = dump
 
 CFLAGS += -m64
 
-LDLIBS64 += -lctf -lelf -lsaveargs
+LDLIBS64 += -lctf -lsunw_elf -lsaveargs
 
 C99MODE = $(C99_ENABLE)
 

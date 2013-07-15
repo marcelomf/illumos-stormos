@@ -20,10 +20,11 @@
 #
 #
 # Copyright (c) 1995, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROGS=		pcom acom dcom tpcom dispsyms
-LDLIBS=		-lelf
+LDLIBS=		-lsunw_elf
 
 OBJS=	$(PROGS:%=%.o)
 

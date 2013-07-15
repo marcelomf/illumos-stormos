@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include		../../../../../lib/Makefile.lib
@@ -65,7 +66,7 @@ STR_PICS=	$(STR_OBJ:%.o=$(PICDIR)/%.o)
 SYM_PICS=	$(SYM_OBJ:%.o=$(PICDIR)/%.o)
 SYMINFO_PICS=	$(SYMINFO_OBJ:%.o=$(PICDIR)/%.o)
 
-LDLIBS +=	$(ELFLIBDIR) -lelf $(LDDBGLIBDIR) $(LDDBG_LIB) \
+LDLIBS +=	$(ELFLIBDIR) -lsunw_elf $(LDDBGLIBDIR) $(LDDBG_LIB) \
 		$(CONVLIBDIR) $(CONV_LIB) -lc
 
 $(CAP_LIB):=		PICS = $(CAP_PICS)

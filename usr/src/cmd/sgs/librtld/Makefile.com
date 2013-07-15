@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY=	librtld.a
@@ -43,7 +44,7 @@ CPPFLAGS +=	-I../../rtld/common -I$(SRCBASE)/lib/libc/inc \
 		-I$(SRCBASE)/uts/common/krtld -I$(SRC)/common/sgsrtcid \
 		-I$(SRCBASE)/uts/sparc
 DYNFLAGS +=	$(VERSREF) $(CC_USE_PROTO)  '-R$$ORIGIN'
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lelf -lc
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf -lc
 
 CERRWARN +=	-_gcc=-Wno-parentheses
 CERRWARN +=	-_gcc=-Wno-unused-value

@@ -21,8 +21,7 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
-#
-# ident	"%Z%%M%	%I%	%E% SMI"
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY = libdhcpsvc.a
@@ -35,7 +34,7 @@ include $(SRC)/lib/libdhcpsvc/Makefile.com
 LIBS	= $(DYNLIB) $(LINTLIB)
 $(LINTLIB) := SRCS = $(SRCDIR)/$(LINTSRC)
 
-LDLIBS += -lnsl -linetutil -lelf -lc
+LDLIBS += -lnsl -linetutil -lsunw_elf -lc
 CPPFLAGS += -D_DHCPSVC_IMPL -I$(SRC)/cmd/cmd-inet/usr.lib/dsvclockd $(DEBUG)
 
 .KEEP_STATE:

@@ -21,9 +21,8 @@
 #
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
-# ident	"%Z%%M%	%I%	%E% SMI"
-# 
 
 BOOTPROG= symdef
 
@@ -34,7 +33,7 @@ include ../Makefile.com
 
 .KEEP_STATE:
 
-LDLIBS +=	-lelf
+LDLIBS +=	-lsunw_elf
 
 # Writing into string literals is incorrect.  We need to match gcc's
 # behavior, which causes us to take SIGSEGV on such a write.

@@ -3,6 +3,8 @@
 # Use is subject to license terms.
 #
 # Copyright 2011, Richard Lowe.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+#
 
 include ../../Makefile.ctf
 
@@ -77,7 +79,7 @@ CPPFLAGS +=	-I$(SRCDIR) -DELF_TARGET_ALL=1
 CERRWARN +=	-_gcc=-Wno-unused
 CERRWARN +=	-_gcc=-Wno-implicit-function-declaration
 
-LDLIBS = -lelf -lc
+LDLIBS = -lsunw_elf -lc
 
 .KEEP_STATE:
 .PARALLEL:

@@ -21,6 +21,7 @@
 #
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= file
@@ -48,7 +49,7 @@ POFILES= $(SRCS:%.c=%.po)
 # This will avoid the multiple symbols definition error
 # for static global variables in elf_read32.o and elf_read64.o
 
-LDLIBS += -lelf
+LDLIBS += -lsunw_elf
 CPPFLAGS += -I$(ELFCAP) -I$(SGSRTCID)
 $(XPG4) := CFLAGS += -DXPG4
 

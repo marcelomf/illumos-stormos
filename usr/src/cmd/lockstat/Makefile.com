@@ -21,6 +21,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= lockstat
@@ -29,7 +30,7 @@ SRCS= $(OBJS:%.o=../%.c)
 
 include ../../Makefile.cmd
 
-LDLIBS += -lelf -lkstat -ldtrace
+LDLIBS += -lsunw_elf -lkstat -ldtrace
 CFLAGS += $(CCVERBOSE)
 CFLAGS64 += $(CCVERBOSE)
 CERRWARN += -_gcc=-Wno-uninitialized

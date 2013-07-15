@@ -22,6 +22,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		mcs
@@ -44,7 +45,7 @@ OBJS =		$(COMOBJS) $(TOOLSOBJS)
 LLDFLAGS =	'-R$$ORIGIN/../../lib'
 LLDFLAGS64 =	'-R$$ORIGIN/../../../lib/$(MACH64)'
 LDFLAGS +=	$(VERSREF) $(LLDFLAGS)
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lelf
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf
 
 LINTFLAGS +=	-x
 LINTFLAGS64 +=	-x

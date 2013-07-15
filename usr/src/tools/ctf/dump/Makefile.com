@@ -21,6 +21,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 .KEEP_STATE:
@@ -31,7 +32,7 @@ SRCS = dump.c utils.c symbol.c
 
 include ../../Makefile.ctf
 
-LDLIBS += -lelf -lz
+LDLIBS += -lsunw_elf -lz
 
 OBJS = $(SRCS:%.c=%.o)
 LINTFILES = $(SRCS:%.c=%.ln)

@@ -21,6 +21,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		nm
@@ -43,7 +44,7 @@ CPPFLAGS=	$(INCLIST) $(DEFLIST) $(CPPFLAGS.master) -I$(ELFCAP)
 
 CERRWARN +=	-_gcc=-Wno-uninitialized
 
-LDLIBS +=	$(CONVLIBDIR64) $(CONV_LIB) $(ELFLIBDIR) -lelf
+LDLIBS +=	$(CONVLIBDIR64) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf
 LINTFLAGS64 +=	-x $(LDLIBS) -m64
 LINTSRCS=	$(SRCS)
 CLEANFILES +=	$(LINTOUTS)

@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		elfwrap
@@ -52,7 +53,7 @@ CPPFLAGS =	-I. -I../common -I../../include $(CPPFLAGS.master) -I$(ELFCAP)
 LLDFLAGS =
 LLDFLAGS64 =
 LDFLAGS +=	$(VERSREF) $(CC_USE_PROTO) $(MAPOPTS) $(LLDFLAGS)
-LDLIBS +=	$(ELFLIBDIR) -lelf $(CONVLIBDIR) $(CONV_LIB)
+LDLIBS +=	$(ELFLIBDIR) -lsunw_elf $(CONVLIBDIR) $(CONV_LIB)
 
 LINTFLAGS +=	-x
 LINTFLAGS64 +=	-x

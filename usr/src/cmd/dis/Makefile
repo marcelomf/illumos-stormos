@@ -21,6 +21,7 @@
 #
 # Copyright 2007 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=	dis
@@ -29,7 +30,7 @@ SRCS=	$(OBJS:%.o=%.c)
 
 include 	../Makefile.cmd
 
-LDLIBS += -ldisasm -luutil -lelf
+LDLIBS += -ldisasm -luutil -lsunw_elf
 CERRWARN += -_gcc=-Wno-uninitialized
 
 .KEEP_STATE:

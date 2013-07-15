@@ -20,9 +20,10 @@
 #
 #
 # Copyright (c) 1990, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
-LIBRARY=	libelf.a
+LIBRARY=	libsunw_elf.a
 VERS=		.1
 M4=		m4
 
@@ -95,7 +96,7 @@ SGSMSGFLAGS2=	$(SGSMSGFLAGS) -h $(BLTDEFS) -d $(BLTDATA) -n libelf_msg
 BLTSRCS=	$(BLTOBJS:%.o=%.c)
 LIBSRCS=	$(COMOBJS:%.o=../common/%.c)  $(MISCOBJS:%.o=../misc/%.c) \
 		$(MACHOBJS:%.o=%.c)  $(BLTSRCS)
-SRCS=		../common/llib-lelf
+SRCS=		../common/llib-lsunw_elf
 LINTSRCS=	$(LIBSRCS) ../common/lintsup.c
 
 ROOTFS_DYNLIB=		$(DYNLIB:%=$(ROOTFS_LIBDIR)/%)

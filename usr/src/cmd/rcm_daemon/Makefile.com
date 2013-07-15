@@ -20,6 +20,7 @@
 #
 #
 # Copyright (c) 1999, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include ../../Makefile.cmd
@@ -142,7 +143,7 @@ SUNW_ip_rcm.so := LDLIBS_MODULES += -L$(ROOT)/lib -linetutil -ldladm -lipmp -lip
 SUNW_ip_anon_rcm.so := LDLIBS_MODULES += -L$(ROOT)/lib -linetutil
 SUNW_bridge_rcm.so := LDLIBS_MODULES += -L$(ROOT)/lib -ldladm
 
-LDLIBS += -lgen -lelf -lrcm -lnvpair -ldevinfo -lnsl -lsocket
+LDLIBS += -lgen -lsunw_elf -lrcm -lnvpair -ldevinfo -lnsl -lsocket
 
 SRCS = $(RCM_SRC) $(COMMON_MOD_SRC)
 

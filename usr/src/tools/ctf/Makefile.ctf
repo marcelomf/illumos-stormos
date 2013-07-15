@@ -21,6 +21,7 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include ../../../Makefile.tools
@@ -38,6 +39,7 @@ include ../../../Makefile.tools
 HDRDIRS= \
 	-_gcc=-nostdinc \
 	-I../../common \
+	-I$(SRC)/cmd/sgs/libelf/common \
 	-I$(SRC) \
 	-I/usr/include \
 	-I$(SRC)/uts/common

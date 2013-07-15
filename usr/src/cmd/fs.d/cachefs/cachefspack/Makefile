@@ -20,10 +20,9 @@
 # CDDL HEADER END
 #
 #
-#ident	"%Z%%M%	%I%	%E% SMI"
-#
 # Copyright 2005 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/fs.d/cachefs/cachefspack
 #
@@ -42,7 +41,7 @@ PROGOBJS=	docmds.o elfrd.o funcs.o subr.o rules.o main.o
 include		../Makefile.cachefs
 
 CPPFLAGS += -D_LARGEFILE64_SOURCE -I../..
-LDLIBS += -lelf -lgen
+LDLIBS += -lsunw_elf -lgen
 
 $(LIBPROG) :	$(CFSLIB)
 

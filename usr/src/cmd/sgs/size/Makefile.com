@@ -22,6 +22,7 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		size
@@ -42,7 +43,7 @@ LLDFLAGS =	'$(LDPASS)-R$$ORIGIN/../../lib'
 LLDFLAGS64 =	'$(LDPASS)-R$$ORIGIN/../../../lib/$(MACH64)'
 LDFLAGS +=	$(LLDFLAGS)
 
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lelf
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf
 
 LINTSRCS =	$(SRCS)
 

@@ -19,6 +19,7 @@
 # CDDL HEADER END
 #
 # Copyright (c) 2003, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY = libelfsign.a
@@ -36,7 +37,7 @@ SRCDIR =	../common
 LIBS =		$(DYNLIB) $(LINTLIB)
 $(LINTLIB):=	SRCS = $(SRCDIR)/$(LINTSRC)
 
-LDLIBS +=	-lmd -lelf -lkmf -lcryptoutil -lc
+LDLIBS +=	-lmd -lsunw_elf -lkmf -lcryptoutil -lc
 
 CFLAGS +=	$(CCMT) $(CCVERBOSE)
 CPPFLAGS +=	-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS

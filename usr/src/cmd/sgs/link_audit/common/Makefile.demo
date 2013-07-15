@@ -21,6 +21,7 @@
 
 #
 # Copyright (c) 1996, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 MACH:sh=	uname -p
@@ -110,11 +111,11 @@ lib64/truss.so.1: \
 
 lib32/who.so.1: \
 	obj32/who.o obj32/env.o
-	$(LINK.c) -G obj32/who.o obj32/env.o -o $@ -lelf $(LDLIBS)
+	$(LINK.c) -G obj32/who.o obj32/env.o -o $@ -lsunw_elf $(LDLIBS)
 
 lib64/who.so.1: \
 	obj64/who.o obj64/env.o
-	$(LINK.c) -G obj64/who.o obj64/env.o -o $@ -lelf $(LDLIBS)
+	$(LINK.c) -G obj64/who.o obj64/env.o -o $@ -lsunw_elf $(LDLIBS)
 
 obj32 \
 obj64 \

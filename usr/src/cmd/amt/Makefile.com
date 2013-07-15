@@ -22,6 +22,7 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=	amt
@@ -30,7 +31,7 @@ SRCS=	$(OBJS:%.o=../%.c)
 
 include ../../Makefile.cmd
 
-LDLIBS +=	-lelf
+LDLIBS +=	-lsunw_elf
 
 LINTFLAGS +=	-erroff=E_NAME_USED_NOT_DEF2
 LINTFLAGS64 +=	-erroff=E_NAME_USED_NOT_DEF2

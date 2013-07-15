@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		ldd
@@ -44,7 +45,7 @@ CPPFLAGS +=	-I. -I../../include -I../../include/$(MACH) \
 LLDFLAGS =	'-R$$ORIGIN/../../lib'
 LLDFLAGS64 =	'-R$$ORIGIN/../../../lib/$(MACH64)'
 LDFLAGS +=	$(VERSREF) $(CC_USE_PROTO) $(MAPOPTS) $(LLDFLAGS)
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) -lelf $(DLLIB)
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) -lsunw_elf $(DLLIB)
 LINTFLAGS +=	-x
 LINTFLAGS64 +=	-x
 

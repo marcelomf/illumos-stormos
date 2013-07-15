@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		elfedit
@@ -47,7 +48,7 @@ CPPFLAGS=	-I. -I../common -I../../include -I../../include/$(MACH) \
 LLDFLAGS =	$(VAR_ELFEDIT_LLDFLAGS)
 LLDFLAGS64 =	$(VAR_ELFEDIT_LLDFLAGS64)
 LDFLAGS +=	$(VERSREF) $(CC_USE_PROTO) -M$(MAPFILE) $(LLDFLAGS)
-LDLIBS +=	$(ELFLIBDIR) -lelf $(LDDBGLIBDIR) $(LDDBG_LIB) \
+LDLIBS +=	$(ELFLIBDIR) -lsunw_elf $(LDDBGLIBDIR) $(LDDBG_LIB) \
 		    $(CONVLIBDIR) $(CONV_LIB) -ltecla
 
 LINTFLAGS +=	-x

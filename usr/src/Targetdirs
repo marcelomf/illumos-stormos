@@ -1047,8 +1047,8 @@ $(ROOT)/usr/lib/llib-ldoor.ln:=		REALPATH=../../lib/llib-ldoor.ln
 $(ROOT)/usr/lib/llib-ldoor:=		REALPATH=../../lib/llib-ldoor
 $(ROOT)/usr/lib/llib-lefi.ln:=		REALPATH=../../lib/llib-lefi.ln
 $(ROOT)/usr/lib/llib-lefi:=		REALPATH=../../lib/llib-lefi
-$(ROOT)/usr/lib/llib-lelf.ln:=		REALPATH=../../lib/llib-lelf.ln
-$(ROOT)/usr/lib/llib-lelf:=		REALPATH=../../lib/llib-lelf
+$(ROOT)/usr/lib/llib-lsunw_elf.ln:=	REALPATH=../../lib/llib-lsunw_elf.ln
+$(ROOT)/usr/lib/llib-lsunw_elf:=	REALPATH=../../lib/llib-lsunw_elf
 $(ROOT)/usr/lib/llib-lfdisk.ln:=	REALPATH=../../lib/llib-lfdisk.ln
 $(ROOT)/usr/lib/llib-lfdisk:=		REALPATH=../../lib/llib-lfdisk
 $(ROOT)/usr/lib/llib-lgen.ln:=		REALPATH=../../lib/llib-lgen.ln
@@ -1405,8 +1405,8 @@ $(ROOT)/usr/lib/$(MACH64)/llib-ldoor.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-ldoor.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-lefi.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-lefi.ln
-$(ROOT)/usr/lib/$(MACH64)/llib-lelf.ln:= \
-	REALPATH=../../../lib/$(MACH64)/llib-lelf.ln
+$(ROOT)/usr/lib/$(MACH64)/llib-lsunw_elf.ln:= \
+	REALPATH=../../../lib/$(MACH64)/llib-lsunw_elf.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-lgen.ln:= \
 	REALPATH=../../../lib/$(MACH64)/llib-lgen.ln
 $(ROOT)/usr/lib/$(MACH64)/llib-linetutil.ln:= \
@@ -1659,8 +1659,8 @@ SYM.USRLIB= \
 	/usr/lib/llib-ldoor.ln \
 	/usr/lib/llib-lefi \
 	/usr/lib/llib-lefi.ln \
-	/usr/lib/llib-lelf \
-	/usr/lib/llib-lelf.ln \
+	/usr/lib/llib-lsunw_elf \
+	/usr/lib/llib-lsunw_elf.ln \
 	/usr/lib/llib-lgen \
 	/usr/lib/llib-lgen.ln \
 	/usr/lib/llib-linetutil \
@@ -1883,7 +1883,7 @@ SYM.USRLIB64= \
 	/usr/lib/$(MACH64)/llib-ldl.ln \
 	/usr/lib/$(MACH64)/llib-ldoor.ln \
 	/usr/lib/$(MACH64)/llib-lefi.ln \
-	/usr/lib/$(MACH64)/llib-lelf.ln \
+	/usr/lib/$(MACH64)/llib-lsunw_elf.ln \
 	/usr/lib/$(MACH64)/llib-lgen.ln \
 	/usr/lib/$(MACH64)/llib-linetutil.ln \
 	/usr/lib/$(MACH64)/llib-lintl.ln \

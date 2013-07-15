@@ -21,6 +21,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/modload/Makefile.com
 #
@@ -65,11 +66,11 @@ CERRWARN += -_gcc=-Wno-parentheses
 
 $(ROOTDRVPROG) := FILEMODE = 0555
 
-add_drv			:= LDLIBS += -ldevinfo -lelf
+add_drv			:= LDLIBS += -ldevinfo -lsunw_elf
 rem_drv			:= LDLIBS += -ldevinfo
 update_drv		:= LDLIBS += -ldevinfo
 
-lint_add_drv.c		:= LDLIBS += -ldevinfo -lelf
+lint_add_drv.c		:= LDLIBS += -ldevinfo -lsunw_elf
 lint_rem_drv.c		:= LDLIBS += -ldevinfo
 lint_update_drv.c	:= LDLIBS += -ldevinfo
 

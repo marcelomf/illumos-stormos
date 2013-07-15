@@ -23,6 +23,7 @@
 #
 # Copyright 1989,2003 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/tnf/prex/Makefile.com
 #
@@ -62,7 +63,7 @@ POFILES= $(OBJS.c:%.o=%.po)
 YFLAGS=		-d
 LFLAGS=		-v
 # FOR normal makefile, uncomment the next line
-LDLIBS +=	-lgen -ltnfctl -lelf -lc
+LDLIBS +=	-lgen -ltnfctl -lsunw_elf -lc
 # Uncomment the following line for a debug build
 # COPTFLAG =	-g -DDEBUG
 

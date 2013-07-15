@@ -22,6 +22,7 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG = dtrace
@@ -32,7 +33,7 @@ include ../../Makefile.cmd
 
 CFLAGS += $(CCVERBOSE)
 CFLAGS64 += $(CCVERBOSE)
-LDLIBS += -ldtrace -lproc -lctf -lelf
+LDLIBS += -ldtrace -lproc -lctf -lsunw_elf
 
 FILEMODE = 0555
 

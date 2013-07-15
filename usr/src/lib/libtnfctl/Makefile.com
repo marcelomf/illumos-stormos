@@ -21,6 +21,7 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY=	libtnfctl.a
@@ -68,7 +69,7 @@ CHECKHDRS=	$(HDRS:%.h=%.check)
 $(ROOTHDRS) := 	FILEMODE = 0644
 CHECKHDRS =	$(HDRS:%.h=%.check)
 
-LDLIBS +=	-lc -lelf
+LDLIBS +=	-lc -lsunw_elf
 
 # Uncomment the following line for a debug build
 # COPTFLAG =	-g -DDEBUG $(CCVERBOSE)

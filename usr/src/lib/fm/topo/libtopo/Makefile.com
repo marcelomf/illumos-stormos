@@ -20,6 +20,7 @@
 #
 #
 # Copyright (c) 2006, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY = libtopo.a
@@ -86,7 +87,7 @@ LINTFLAGS = -msux
 LINTFLAGS64 = -msux -m64
 
 $(DYNLIB)  := LDLIBS += \
-	-lnvpair -lelf -lumem -lxml2 -lkstat -luuid -ldevinfo \
+	-lnvpair -lsunw_elf -lumem -lxml2 -lkstat -luuid -ldevinfo \
 	-lsmbios -lc -ldevid -lipmi -lscf
 
 $(LINTLIB) := SRCS = $(SRCDIR)/$(LINTSRC)

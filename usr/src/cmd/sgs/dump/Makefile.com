@@ -22,6 +22,7 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG=		dump
@@ -43,7 +44,7 @@ LDFLAGS +=	$(LLDFLAGS)
 
 CERRWARN +=	-_gcc=-Wno-uninitialized
 
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lelf
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf
 LINTFLAGS +=	-x
 LINTSRCS =	$(SRCS)
 

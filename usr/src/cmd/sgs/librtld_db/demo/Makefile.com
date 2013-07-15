@@ -19,6 +19,8 @@
 # CDDL HEADER END
 #
 # Copyright (c) 1995, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+#
 
 PROG=		rdb
 
@@ -51,7 +53,7 @@ MV =		mv
 .PARALLEL:	$(OBJS)
 
 CPPFLAGS=	-I../common -I. $(CPPFLAGS.master)
-LDLIBS +=	-lrtld_db -lelf -ll -ly
+LDLIBS +=	-lrtld_db -lsunw_elf -ll -ly
 
 CLEANFILES +=	$(BLTSRC) $(BLTHDR) simp libsub.so.1
 

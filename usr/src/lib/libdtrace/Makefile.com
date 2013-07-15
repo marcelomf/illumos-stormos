@@ -21,6 +21,7 @@
 #
 # Copyright (c) 2003, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright (c) 2012 by Delphix. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY = libdtrace.a
@@ -131,7 +132,7 @@ CERRWARN += -_gcc=-Wno-uninitialized
 CERRWARN += -_gcc=-Wno-switch
 
 YYCFLAGS =
-LDLIBS += -lgen -lproc -lrtld_db -lnsl -lsocket -lctf -lelf -lc
+LDLIBS += -lgen -lproc -lrtld_db -lnsl -lsocket -lctf -lsunw_elf -lc
 DRTILDLIBS = $(LDLIBS.lib) -lc
 
 yydebug := YYCFLAGS += -DYYDEBUG

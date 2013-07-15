@@ -21,6 +21,7 @@
 
 #
 # Copyright (c) 1994, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG =		ld
@@ -38,7 +39,7 @@ MAPFILES =	../common/mapfile-intf $(MAPFILE.NGB)
 MAPOPTS =	$(MAPFILES:%=-M%)
 
 LDFLAGS +=	$(VERSREF) $(CC_USE_PROTO) $(MAPOPTS) $(VAR_LD_LLDFLAGS)
-LDLIBS +=	$(LDLIBDIR) $(LD_LIB) $(ELFLIBDIR) -lelf \
+LDLIBS +=	$(LDLIBDIR) $(LD_LIB) $(ELFLIBDIR) -lsunw_elf \
 		    $(LDDBGLIBDIR) $(LDDBG_LIB) $(CONVLIBDIR) $(CONV_LIB)
 
 CERRWARN +=	-_gcc=-Wno-switch
@@ -50,7 +51,7 @@ LINTFLAGS64 +=	-x $(VAR_LINTFLAGS64)
 CLEANFILES +=	$(LINTOUTS)
 
 native :=	LDFLAGS = -R$(SGSPROTO) $(ZNOVERSION)
-native :=	LDLIBS = -L$(SGSPROTO) $(LD_LIB) -lelf $(CONVLIBDIR) \
+native :=	LDLIBS = -L$(SGSPROTO) $(LD_LIB) -lsunw_elf $(CONVLIBDIR) \
 		    $(CONV_LIB)
 
 BLTDEFS=	msg.h

@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY=	libldstab.a
@@ -40,7 +41,7 @@ SRCBASE=	../../../..
 
 CPPFLAGS +=	-I$(ELFCAP)
 
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lelf -lc
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf -lc
 DYNFLAGS +=	$(VERSREF) $(CC_USE_PROTO)
 
 LINTFLAGS +=	-erroff=E_NAME_DECL_NOT_USED_DEF2 \

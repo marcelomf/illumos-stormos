@@ -22,6 +22,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY =	libld.a
@@ -105,7 +106,7 @@ CPPFLAGS +=	-DUSE_LIBLD_MALLOC -I$(SRCBASE)/lib/libc/inc \
 		    -I$(SRCBASE)/uts/common/krtld -I$(SRCBASE)/uts/sparc \
 		    $(VAR_LIBLD_CPPFLAGS)
 LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(LDDBGLIBDIR) $(LDDBG_LIB) \
-		    $(ELFLIBDIR) -lelf $(DLLIB) -lc
+		    $(ELFLIBDIR) -lsunw_elf $(DLLIB) -lc
 
 LINTFLAGS +=	-u -D_REENTRANT
 LINTFLAGS64 +=	-u -D_REENTRANT

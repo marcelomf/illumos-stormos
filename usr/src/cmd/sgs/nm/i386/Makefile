@@ -20,6 +20,7 @@
 #
 #
 # Copyright (c) 1993, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/sgs/nm/i386/Makefile
 #
@@ -47,7 +48,7 @@ CPPFLAGS=	$(INCLIST) $(DEFLIST) $(CPPFLAGS.master) -I$(ELFCAP)
 
 CERRWARN +=	-_gcc=-Wno-uninitialized
 
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lelf
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf
 LINTFLAGS +=	-x $(LDLIBS)
 LINTSRCS=	$(SRCS)
 CLEANFILES +=	$(LINTOUTS)

@@ -21,6 +21,7 @@
 #
 # Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 LIBRARY=	libkvm.a
@@ -42,7 +43,7 @@ LINTSRC=	$(LINTLIB:%.ln=%)
 CFLAGS	+=	$(CCVERBOSE)
 DYNFLAGS32 +=	-Wl,-f,/usr/platform/\$$PLATFORM/lib/$(DYNLIBPSR)
 DYNFLAGS64 +=	-Wl,-f,/usr/platform/\$$PLATFORM/lib/$(MACH64)/$(DYNLIBPSR)
-LDLIBS +=	-lelf -lc
+LDLIBS +=	-lsunw_elf -lc
 
 CPPFLAGS = -D_KMEMUSER -D_LARGEFILE64_SOURCE=1 -I.. $(CPPFLAGS.master)
 
@@ -56,7 +57,7 @@ lint: lintcheck
 
 test: ../common/test.c
 	$(COMPILE.c) ../common/test.c
-	$(LINK.c) -o $@ test.o -lkvm -lelf
+	$(LINK.c) -o $@ test.o -lkvm -lsunw_elf
 
 # include library targets
 include ../../Makefile.targ

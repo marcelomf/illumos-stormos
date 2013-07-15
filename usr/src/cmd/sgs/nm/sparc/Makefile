@@ -21,6 +21,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/sgs/nm/sparc/Makefile
 #
@@ -46,7 +47,7 @@ INCLIST=	-I../../include -I../../include/sparc \
 DEFLIST=	-DTARGET=SPARC -DSPARC=1 -D$(ARFORMAT) -DELF
 CPPFLAGS=	$(INCLIST) $(DEFLIST) $(CPPFLAGS.master)  -I$(ELFCAP)
 CERRWARN +=	-_gcc=-Wno-uninitialized
-LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lelf
+LDLIBS +=	$(CONVLIBDIR) $(CONV_LIB) $(ELFLIBDIR) -lsunw_elf
 LINTFLAGS=	-x $(LDLIBS)
 LINTSRCS=	$(SRCS)
 CLEANFILES +=	$(LINTOUTS)
