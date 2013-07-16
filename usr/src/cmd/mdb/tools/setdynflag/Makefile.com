@@ -22,6 +22,7 @@
 #
 # Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 .KEEP_STATE:
@@ -41,11 +42,11 @@ include ../../common/Makefile.util
 # We're going to run this as part of the build, so we want it to use the
 # running kernel's includes and libraries.
 #
-CPPFLAGS = -I../../common
+CPPFLAGS = -I../../common -I$(SRC)/cmd/sgs/libelf/common
 CFLAGS += $(CCVERBOSE)
 CERRWARN += -_gcc=-Wno-uninitialized
 LDFLAGS =
-LDLIBS	= -lelf
+LDLIBS	= -lsunw_elf
 
 LINTFILES = $(SRCS:%.c=%.ln)
 

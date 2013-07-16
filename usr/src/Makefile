@@ -190,16 +190,16 @@ $(ROOTDIRS) $(MSGDIRS):
 userheaders: FRC
 	@cd head; pwd; $(MAKE) install_h
 
-libheaders: bldtools
+libheaders: bldtools cmdheaders
 	@cd lib; pwd; $(MAKE) install_h
 
 sysheaders: FRC
 	@cd uts; pwd; $(MAKE) install_h
 
 cmdheaders: FRC
+	@cd cmd/sgs; pwd; $(MAKE) install_h
 	@cd cmd/fm; pwd; $(MAKE) install_h
 	@cd cmd/mdb; pwd; $(MAKE) install_h
-	@cd cmd/sgs; pwd; $(MAKE) install_h
 
 check:	$(CHKHDRSUBDIRS) $(CHKMFSTSUBDIRS)
 

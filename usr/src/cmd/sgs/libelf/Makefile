@@ -29,7 +29,7 @@ include		$(SRC)/cmd/sgs/Makefile.sub
 
 include		$(SRC)/lib/Makefile.lib
 
-HDRS= 		libelf.h
+HDRS= 		libelf.h gelf.h
 HDRDIR=		common
 
 install_h:	$(ROOTHDRS)

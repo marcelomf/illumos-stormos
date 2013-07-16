@@ -21,6 +21,7 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 #
@@ -44,10 +45,6 @@ OBJECTS= $(MECH) $(CRYPTO) $(DERIVED_OBJS)
 # include library definitions
 include ../../../../Makefile.lib
 
-MAKEFILE_EXPORT = $(CLOSED)/lib/gss_mechs/mech_dh/backend/Makefile.export
-$(EXPORT_RELEASE_BUILD)include $(MAKEFILE_EXPORT)
-
-
 CPPFLAGS += -I../mech -I../crypto -I$(SRC)/uts/common/gssapi/include
 
 CERRWARN +=	-_gcc=-Wno-parentheses
@@ -64,9 +61,7 @@ DYNFLAGS +=	$(ZIGNORE)
 LIBS = $(DYNLIB)
 LIBNAME = $(LIBRARY:%.a=%)
 
-MAPFILES =	../mapfile-vers
-$(EXPORT_RELEASE_BUILD)MAPFILES = \
-	$(CLOSED)/lib/gss_mechs/mech_dh/backend/mapfile-vers-export
+MAPFILES =
 
 LDLIBS +=  -lgss -lnsl -lc 
 

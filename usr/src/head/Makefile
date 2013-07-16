@@ -21,6 +21,7 @@
 #
 # Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # head/Makefile
 #
@@ -72,7 +73,6 @@ HDRS=   $($(MACH)_HDRS)  $(ATTRDB_HDRS) \
 	fmtmsg.h	\
 	fnmatch.h	\
 	ftw.h		\
-	gelf.h		\
 	getopt.h	\
 	getwidth.h	\
 	glob.h		\
@@ -87,7 +87,6 @@ HDRS=   $($(MACH)_HDRS)  $(ATTRDB_HDRS) \
 	lastlog.h	\
 	lber.h		\
 	ldap.h		\
-	libelf.h	\
 	libgen.h	\
 	libintl.h	\
 	libw.h		\

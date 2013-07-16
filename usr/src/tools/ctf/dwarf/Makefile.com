@@ -75,7 +75,7 @@ FILEMODE	= 0755
 
 SRCDIR = ../common/
 
-CPPFLAGS +=	-I$(SRCDIR) -DELF_TARGET_ALL=1
+CPPFLAGS +=	$(HDRDIRS) -I$(SRCDIR) -DELF_TARGET_ALL=1
 CERRWARN +=	-_gcc=-Wno-unused
 CERRWARN +=	-_gcc=-Wno-implicit-function-declaration
 
