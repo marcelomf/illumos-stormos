@@ -923,8 +923,8 @@ $(ROOT)/usr/lib/libdoor.so.1:=		REALPATH=../../lib/libdoor.so.1
 $(ROOT)/usr/lib/libdoor.so:=		REALPATH=../../lib/libdoor.so.1
 $(ROOT)/usr/lib/libefi.so.1:=		REALPATH=../../lib/libefi.so.1
 $(ROOT)/usr/lib/libefi.so:=		REALPATH=../../lib/libefi.so.1
-$(ROOT)/usr/lib/libelf.so.1:=		REALPATH=../../lib/libelf.so.1
-$(ROOT)/usr/lib/libelf.so:=		REALPATH=../../lib/libelf.so.1
+$(ROOT)/usr/lib/libsunw_elf.so.1:=	REALPATH=../../lib/libsunw_elf.so.1
+$(ROOT)/usr/lib/libsunw_elf.so:=	REALPATH=../../lib/libsunw_elf.so.1
 $(ROOT)/usr/lib/libfdisk.so.1:=		REALPATH=../../lib/libfdisk.so.1
 $(ROOT)/usr/lib/libfdisk.so:=		REALPATH=../../lib/libfdisk.so.1
 $(ROOT)/usr/lib/libgen.so.1:=		REALPATH=../../lib/libgen.so.1
@@ -1209,10 +1209,10 @@ $(ROOT)/usr/lib/$(MACH64)/libefi.so.1:= \
 	REALPATH=../../../lib/$(MACH64)/libefi.so.1
 $(ROOT)/usr/lib/$(MACH64)/libefi.so:= \
 	REALPATH=../../../lib/$(MACH64)/libefi.so.1
-$(ROOT)/usr/lib/$(MACH64)/libelf.so.1:= \
-	REALPATH=../../../lib/$(MACH64)/libelf.so.1
-$(ROOT)/usr/lib/$(MACH64)/libelf.so:= \
-	REALPATH=../../../lib/$(MACH64)/libelf.so.1
+$(ROOT)/usr/lib/$(MACH64)/libsunw_elf.so.1:= \
+	REALPATH=../../../lib/$(MACH64)/libsunw_elf.so.1
+$(ROOT)/usr/lib/$(MACH64)/libsunw_elf.so:= \
+	REALPATH=../../../lib/$(MACH64)/libsunw_elf.so.1
 $(ROOT)/usr/lib/$(MACH64)/libgen.so.1:= \
 	REALPATH=../../../lib/$(MACH64)/libgen.so.1
 $(ROOT)/usr/lib/$(MACH64)/libgen.so:= \
@@ -1541,8 +1541,8 @@ SYM.USRLIB= \
 	/usr/lib/libdoor.so.1 \
 	/usr/lib/libefi.so \
 	/usr/lib/libefi.so.1 \
-	/usr/lib/libelf.so \
-	/usr/lib/libelf.so.1 \
+	/usr/lib/libsunw_elf.so \
+	/usr/lib/libsunw_elf.so.1 \
 	/usr/lib/libgen.so \
 	/usr/lib/libgen.so.1 \
 	/usr/lib/libinetutil.so \
@@ -1787,8 +1787,8 @@ SYM.USRLIB64= \
 	/usr/lib/$(MACH64)/libdoor.so.1 \
 	/usr/lib/$(MACH64)/libefi.so \
 	/usr/lib/$(MACH64)/libefi.so.1 \
-	/usr/lib/$(MACH64)/libelf.so \
-	/usr/lib/$(MACH64)/libelf.so.1 \
+	/usr/lib/$(MACH64)/libsunw_elf.so \
+	/usr/lib/$(MACH64)/libsunw_elf.so.1 \
 	/usr/lib/$(MACH64)/libgen.so \
 	/usr/lib/$(MACH64)/libgen.so.1 \
 	/usr/lib/$(MACH64)/libinetutil.so \
