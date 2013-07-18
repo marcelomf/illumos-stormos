@@ -431,7 +431,6 @@ COMMON_SUBDIRS=		\
 	utmpd		\
 	valtools	\
 	vgrind		\
-	vi		\
 	volcheck	\
 	volrmmount	\
 	vrrpadm		\
@@ -723,7 +722,6 @@ MSGSUBDIRS=		\
 	userattr	\
 	valtools	\
 	vgrind		\
-	vi		\
 	volcheck	\
 	volrmmount	\
 	vrrpadm		\
