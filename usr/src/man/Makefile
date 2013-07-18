@@ -31,7 +31,6 @@ SUBDIRS=man1		\
 	man3devinfo	\
 	man3dlpi	\
 	man3dns_sd	\
-	man3elf		\
 	man3exacct	\
 	man3ext		\
 	man3fcoe	\
