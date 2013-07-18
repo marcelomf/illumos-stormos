@@ -946,7 +946,7 @@ boolclear(void)
 }
 
 POSTING *
-boolfile(INVCONTROL *invcntl, long *num, int op)
+boolfile(INVCONTROL *invcntl, long *num, int bool)
 {
 	ENTRY	*entryptr;
 	FILE	*file;
@@ -963,7 +963,7 @@ boolfile(INVCONTROL *invcntl, long *num, int op)
 	ptr2 = ((unsigned long *)ptr) +
 	    (entryptr->size + (sizeof (long) - 1)) / sizeof (long);
 	*num = entryptr->post;
-	switch (op) {
+	switch (bool) {
 	case OR:
 	case NOT:
 		if (*num == 0) {
@@ -973,7 +973,7 @@ boolfile(INVCONTROL *invcntl, long *num, int op)
 	}
 	/* make room for the new set */
 	u = 0;
-	switch (op) {
+	switch (bool) {
 	case AND:
 	case NOT:
 		newsetp = set1p = item;
@@ -1016,7 +1016,7 @@ boolfile(INVCONTROL *invcntl, long *num, int op)
 	(void) fseek(file, (long)*ptr2, SEEK_SET);
 	read_next_posting(invcntl, &posting);
 	newsetc = 0;
-	switch (op) {
+	switch (bool) {
 	case OR:
 		/* while something in both sets */
 		set1p = item;
