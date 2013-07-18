@@ -26,7 +26,6 @@ SUBDIRS=man1		\
 	man3commputil	\
 	man3contract	\
 	man3cpc		\
-	man3curses	\
 	man3dat		\
 	man3devid	\
 	man3devinfo	\
@@ -77,7 +76,6 @@ SUBDIRS=man1		\
 	man3tsol	\
 	man3uuid	\
 	man3volmgt	\
-	man3xcurses	\
 	man3xnet	\
 	man4		\
 	man5		\
