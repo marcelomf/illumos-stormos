@@ -21,12 +21,14 @@
 
 #
 # Copyright (c) 2008, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include		$(SRC)/lib/Makefile.lib
 
 CAPDIR =	capabilities
-SUBDIRS =	$(MACH) $(BUILD64) $(MACH64) $(PLATFORMS)
+SUBDIRS =	$(MACH) $(PLATFORMS)
+$(BUILD64)SUBDIRS += $(MACH64)
 
 all :=		TARGET= all
 clean :=	TARGET= clean

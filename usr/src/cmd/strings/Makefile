@@ -23,6 +23,7 @@
 #
 # Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 # cmd/strings/Makefile
 
@@ -30,7 +31,8 @@ PROG:sh=	basename `pwd`
 
 include ../Makefile.cmd
 
-SUBDIRS	= 	$(MACH) $(MACH64)
+SUBDIRS	= 	$(MACH)
+$(BUILD64)SUBDIRS += $(MACH64)
 
 all	:=	TARGET = all
 install	:=	TARGET = install

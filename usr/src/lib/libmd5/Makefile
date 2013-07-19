@@ -21,11 +21,13 @@
 #
 # Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 include		../Makefile.lib
 
-SUBDIRS =	$(MACH) $(BUILD64) $(MACH64)
+SUBDIRS =	$(MACH)
+$(BUILD64)SUBDIRS += $(MACH64)
 
 all :=		TARGET= all
 clean :=	TARGET= clean
