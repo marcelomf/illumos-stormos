@@ -20,6 +20,7 @@
  */
 
 /*
+ * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
  * Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
  * Use is subject to license terms.
  */
@@ -75,7 +76,7 @@ static int confirm(FILE *, const char *, ...);
 static void memerror(void);
 static int checkdir(struct dlist *, struct dlist *);
 static int errcnt;
-static boolean_t silent, interactive, recursive, ontty;
+static boolean_t silent, interactive, recursive, verbose, ontty;
 
 static char *pathbuf;
 static size_t pathbuflen = MAXPATHLEN;
@@ -95,7 +96,7 @@ main(int argc, char **argv)
 #endif
 	(void) textdomain(TEXT_DOMAIN);
 
-	while ((c = getopt(argc, argv, "frRi")) != EOF)
+	while ((c = getopt(argc, argv, "frRiv")) != EOF)
 		switch (c) {
 		case 'f':
 			silent = B_TRUE;
@@ -112,6 +113,9 @@ main(int argc, char **argv)
 		case 'r':
 		case 'R':
 			recursive = B_TRUE;
+			break;
+		case 'v':
+			verbose = B_TRUE;
 			break;
 		case '?':
 			errflg = 1;
@@ -133,7 +137,7 @@ main(int argc, char **argv)
 	argv = &argv[optind];
 
 	if ((argc < 1 && !silent) || errflg) {
-		(void) fprintf(stderr, gettext("usage: rm [-fiRr] file ...\n"));
+		(void) fprintf(stderr, gettext("usage: rm [-fiRrv] file ...\n"));
 		exit(2);
 	}
 
@@ -554,7 +558,8 @@ unlinkit:
 #endif
 		}
 		errcnt++;
-	}
+	} else if (verbose)
+		printf(gettext("removed `%s'\n"), pathbuf);
 	return (0);
 }
 
