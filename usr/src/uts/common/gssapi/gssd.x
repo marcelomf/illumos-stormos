@@ -24,8 +24,6 @@
 % * Use is subject to license terms.
 % */
 %
-%#pragma ident	"%Z%%M%	%I%	%E% SMI"
-%
 %/*
 % *  RPC protocol information for gssd, the usermode daemon that
 % *  assists the kernel with gssapi. It is gssd that executes all

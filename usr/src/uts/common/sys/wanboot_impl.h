@@ -27,8 +27,6 @@
 #ifndef	_SYS_WANBOOT_IMPL_H
 #define	_SYS_WANBOOT_IMPL_H
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 #include <sys/types.h>
 #include <aes.h>
 #include <des3.h>

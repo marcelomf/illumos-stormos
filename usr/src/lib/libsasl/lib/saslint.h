@@ -2,7 +2,6 @@
  * Copyright 2004 Sun Microsystems, Inc.  All rights reserved.
  * Use is subject to license terms.
  */
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
 
 /* saslint.h - internal SASL library definitions
  * Rob Siemborski

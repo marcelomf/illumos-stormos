@@ -3,8 +3,6 @@
  * Use is subject to license terms.
  */
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 /* DIGEST-MD5 SASL plugin
  * Rob Siemborski
  * Tim Martin

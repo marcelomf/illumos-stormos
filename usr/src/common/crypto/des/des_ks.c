@@ -26,8 +26,6 @@
 
 #include <sys/types.h>
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 static uint64_t pc1_table[2][128]=
 {
 /* BEGIN CSTYLED */

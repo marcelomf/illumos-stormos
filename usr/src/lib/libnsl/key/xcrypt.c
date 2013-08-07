@@ -33,8 +33,6 @@
  * under license from the Regents of the University of California.
  */
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 /*
  * Hex encryption/decryption and utility routines
  */

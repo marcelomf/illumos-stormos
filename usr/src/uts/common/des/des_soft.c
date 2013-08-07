@@ -31,8 +31,6 @@
  * under license from the Regents of the University of California.
  */
 
-#ident	"%Z%%M%	%I%	%E% SMI"
-
 /*
  * Warning!  Things are arranged very carefully in this file to
  * allow read-only data to be moved to the text segment.  The

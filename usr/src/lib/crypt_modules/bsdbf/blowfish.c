@@ -9,8 +9,6 @@
  * been made.
  */
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 /* $OpenBSD: blowfish.c,v 1.16 2002/02/19 19:39:36 millert Exp $ */
 /*
  * Blowfish block cipher for OpenBSD

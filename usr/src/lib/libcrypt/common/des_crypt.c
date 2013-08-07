@@ -27,8 +27,6 @@
 /*	Copyright (c) 1988 AT&T	*/
 /*	  All Rights Reserved  	*/
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
-
 #pragma weak _des_crypt = des_crypt
 #pragma weak _des_encrypt = des_encrypt
 #pragma weak _des_setkey = des_setkey
