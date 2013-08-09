@@ -204,6 +204,7 @@ COMMON_SUBDIRS=		\
 	infocmp		\
 	init		\
 	initpkg		\
+	install.d	\
 	intrd		\
 	intrstat	\
 	ipcrm		\
