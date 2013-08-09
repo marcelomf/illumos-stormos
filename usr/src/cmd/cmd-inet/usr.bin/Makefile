@@ -58,6 +58,9 @@ COMMONSRCS=	$(CMDINETCOMMONDIR)/$(COMMONOBJS:.o=.c)
 POFILES=	rlogin.po rsh.po rcp.po $(COMMONPOFILES)
 POFILE=		usr.bin.po
 
+CLOBBERFILES +=	$(ALL)
+CLEANFILES +=	kcmd.o rcp.o rlogin.o rsh.o
+
 all:=		TARGET= all
 install:=	TARGET= install
 clean:=		TARGET= clean
@@ -167,14 +170,13 @@ $(SUBDIRS): FRC
 
 FRC:
 
-clean: $(SUBDIRS)
+clean: $(SUBDIRS) clean_local
+clean_local:
+	$(RM) $(CLEANFILES)
 
 clobber: $(SUBDIRS) clobber_local
-
-clobber_local:
-	echo $(CLOBBERFILES)
-	$(RM) $(ALL)  $(CLOBBERFILES) 
-
+clobber_local: clean_local
+	$(RM) $(CLOBBERFILES) 
 
 LINTLOCALS=	$(LINTCLEAN:%.c=lint-%)
 

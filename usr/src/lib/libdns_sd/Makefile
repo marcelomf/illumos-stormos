@@ -40,7 +40,7 @@ lint	:= 	TARGET = lint
 
 all install: install_h $(SUBDIRS)
 
-clean clobber: $(SUBDIRS)
+clean clobber: $(SUBDIRS) java
 
 ROOTHDRDIR=	$(ROOT)/usr/include
 ROOTHDRS=	$(HDR:%=$(ROOTHDRDIR)/%)

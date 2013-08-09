@@ -22,6 +22,7 @@
 # Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright 2012 DEY Storage Systems, Inc.  All rights reserved.
 # Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+# Copyright (c) 2013 by Delphix. All rights reserved.
 #
 
 LIBRARY = libproc.a
@@ -85,6 +86,7 @@ SRCS =		$(CMNOBJS:%.o=../common/%.c) $(ISAOBJS:%.o=%.c)
 
 LIBS =		$(DYNLIB) $(LINTLIB)
 LDLIBS +=	-lrtld_db -lsunw_elf -lctf -lc
+C99MODE =	$(C99_ENABLE)
 CPPFLAGS +=	$($(MACH64)_CPPFLAGS)
 
 SRCDIR =	../common
