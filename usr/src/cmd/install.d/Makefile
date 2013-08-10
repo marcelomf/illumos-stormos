@@ -20,9 +20,8 @@
 # CDDL HEADER END
 #
 #
-#ident	"%Z%%M%	%I%	%E% SMI"
-#
 # Copyright (c) 1989 by Sun Microsystems, Inc.
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 PROG= install.d
@@ -36,9 +35,9 @@ ROOTUSRSBINTPROG= $(PROG:%=$(ROOTUSRSBIN)/%)
 all: $(PROG) 
 
 install: all $(ROOTUSRSBINTPROG)
-	$(MV) $(ROOTUSRSBINPROG) $(ROOTUSRSBIN)/install
+	$(MV) $(ROOTUSRSBINPROG) $(ROOTLIB)/install
 	$(RM) $(ROOTETC)/install
-	$(SYMLINK) ../usr/sbin/install $(ROOTETC)/install
+	$(SYMLINK) ../usr/lib/install $(ROOTETC)/install
 
 $(PROG): install.sh
 	$(RM) $(PROG)
