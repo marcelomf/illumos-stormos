@@ -75,7 +75,7 @@ DWARFLDFLAGS	= \
 DWARFCPPFLAGS	= -I../../dwarf/common
 
 LDFLAGS		+= -L$(NATIVE_ADJUNCT)/lib
-LDLIBS		+= -lz -lsunw_elf
+LDLIBS		+= -lz -l$(LIBELFPREFIX)elf
 CPPFLAGS	+= -D_REENTRANT
 CFLAGS		+= $(CTF_FLAGS)
 LINTFLAGS	+= -mnux

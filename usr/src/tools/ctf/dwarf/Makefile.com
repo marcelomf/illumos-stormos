@@ -79,7 +79,7 @@ CPPFLAGS +=	$(HDRDIRS) -I$(SRCDIR) -DELF_TARGET_ALL=1
 CERRWARN +=	-_gcc=-Wno-unused
 CERRWARN +=	-_gcc=-Wno-implicit-function-declaration
 
-LDLIBS = -lsunw_elf -lc
+LDLIBS = -l$(LIBELFPREFIX)elf -lc
 
 .KEEP_STATE:
 .PARALLEL:

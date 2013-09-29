@@ -49,7 +49,7 @@ CPPFLAGS +=	-I$(SRC)/lib/libelfsign/common
 CPPFLAGS +=	-I$(SRC)/uts/common
 CPPFLAGS +=	-I$(SRC)/lib/libkmf/include
 CPPFLAGS +=	-I$(SRC)/lib/libcryptoutil/common
-LDFLAGS +=	-lmd -lsunw_elf -lkmf -lcryptoutil -lc
+LDFLAGS +=	-lmd -l$(LIBELFPREFIX)elf -lkmf -lcryptoutil -lc
 
 CERRWARN += -_gcc=-Wno-unused
 

@@ -36,7 +36,7 @@ SRCS = $(PROG:%=../%.c)
 CFLAGS	+=	$(LDLIBS)
 CERRWARN +=	-_gcc=-Wno-unused-value
 CERRWARN +=	-_gcc=-Wno-parentheses
-LDLIBS	=	-lsunw_elf
+LDLIBS	=	-l$(LIBELFPREFIX)elf
 
 LINTFLAGS =	-nmxsuF -errtags=yes
 LINTLIBS +=	$(LDLIBS)

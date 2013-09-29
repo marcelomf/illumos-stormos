@@ -53,7 +53,7 @@ CERRWARN +=	-_gcc=-Wno-uninitialized
 
 CPPFLAGS +=	-I$(SRC)/lib/libcurses/screen
 CFLAGS +=	$(CCVERBOSE)
-LDLIBS +=	-lsunw_curses -ll
+LDLIBS +=	-l$(LIBCURSESPREFIX)curses -ll
 
 .KEEP_STATE:
 

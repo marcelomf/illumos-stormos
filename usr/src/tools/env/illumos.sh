@@ -21,6 +21,7 @@
 # Copyright (c) 2005, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright 2010, 2011 Nexenta Systems, Inc.  All rights reserved.
 # Copyright 2012 Joshua M. Clulow <josh@sysmgr.org>
+# Copyright (c) 2013 Andrew Stormont.  All rights reserved.
 #
 
 # Configuration variables for the runtime environment of the nightly
@@ -100,7 +101,7 @@ maxjobs DMAKE_MAX_JOBS # "DMAKE_MAX_JOBS" passed as ksh(1) name reference
 export DMAKE_MAX_JOBS
 
 # path to onbld tool binaries
-ONBLD_BIN='/opt/onbld/bin'
+export ONBLD_BIN='/opt/onbld/bin'
 
 # PARENT_WS is used to determine the parent of this workspace. This is
 # for the options that deal with the parent workspace (such as where the
@@ -229,3 +230,9 @@ export SPRO_VROOT="$SPRO_ROOT"
 
 # Uncomment this to disable support for SMB printing.
 # export ENABLE_SMB_PRINTING='#'
+
+# Use to avoid conflict with external libelf implementations.
+#LIBELFPREFIX=sunw_
+
+# Use to avoid conflict with external curses implementations.
+#LIBCURSESPREFIX=sunw_

@@ -33,7 +33,7 @@ SRCS = dump.c utils.c symbol.c
 include ../../Makefile.ctf
 
 LDFLAGS += -L$(NATIVE_ADJUNCT)/lib
-LDLIBS += -lsunw_elf -lz
+LDLIBS += -l$(LIBELFPREFIX)elf -lz
 
 OBJS = $(SRCS:%.c=%.o)
 LINTFILES = $(SRCS:%.c=%.ln)

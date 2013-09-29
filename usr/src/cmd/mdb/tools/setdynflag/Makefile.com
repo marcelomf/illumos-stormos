@@ -46,7 +46,7 @@ CPPFLAGS = -I../../common -I$(SRC)/cmd/sgs/libelf/common
 CFLAGS += $(CCVERBOSE)
 CERRWARN += -_gcc=-Wno-uninitialized
 LDFLAGS =
-LDLIBS	= -lsunw_elf
+LDLIBS	= -l$(LIBELFPREFIX)elf
 
 LINTFILES = $(SRCS:%.c=%.ln)
 
