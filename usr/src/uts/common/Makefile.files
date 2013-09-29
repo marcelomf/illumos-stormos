@@ -22,7 +22,7 @@
 #
 # Copyright (c) 1991, 2010, Oracle and/or its affiliates. All rights reserved.
 # Copyright (c) 2012 Nexenta Systems, Inc. All rights reserved.
-# Copyright (c) 2012 by Delphix. All rights reserved.
+# Copyright (c) 2013 by Delphix. All rights reserved.
 # Copyright (c) 2013 by Saso Kiselkov. All rights reserved.
 #
 
@@ -1359,6 +1359,7 @@ ZFS_COMMON_OBJS +=		\
 	lz4.o			\
 	lzjb.o			\
 	metaslab.o		\
+	range_tree.o		\
 	refcount.o		\
 	rrwlock.o		\
 	sa.o			\
@@ -1369,6 +1370,7 @@ ZFS_COMMON_OBJS +=		\
 	spa_history.o		\
 	spa_misc.o		\
 	space_map.o		\
+	space_reftree.o		\
 	txg.o			\
 	uberblock.o		\
 	unique.o		\
@@ -1721,14 +1723,6 @@ PCMCIA_OBJS += pcmcia.o cs.o cis.o cis_callout.o cis_handlers.o cis_params.o
 BUSRA_OBJS += busra.o
 
 PCS_OBJS += pcs.o
-
-PCAN_OBJS += pcan.o
-
-PCATA_OBJS += pcide.o pcdisk.o pclabel.o pcata.o
-
-PCSER_OBJS += pcser.o pcser_cis.o
-
-PCWL_OBJS += pcwl.o
 
 PSET_OBJS +=	pset.o
 
