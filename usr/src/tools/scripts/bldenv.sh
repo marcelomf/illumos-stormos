@@ -273,6 +273,15 @@ if [[ "${SUNWSPRO}" != "" ]]; then
 	export PATH="${SUNWSPRO}/bin:$PATH" 
 fi 
 
+if [[ -n "${MAKE}" ]]; then
+	if [[ -x "${MAKE}" ]]; then
+		export PATH="$(dirname -- "${MAKE}"):$PATH"
+	else
+		print "\$MAKE (${MAKE}) is not a valid executible"
+		exit 1	
+	fi
+fi
+
 TOOLS="${SRC}/tools"
 TOOLS_PROTO="${TOOLS}/proto/root_${MACH}-nd" ; export TOOLS_PROTO
 
