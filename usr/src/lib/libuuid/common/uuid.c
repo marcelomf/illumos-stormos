@@ -23,7 +23,7 @@
  * Use is subject to license terms.
  * Copyright 2012 Milan Jurik. All rights reserved.
  * Copyright 2013 Joyent, Inc. All rights reserved.
- * Copyright (c) 2014 Andrew Stormont.  All rights reserved.
+ * Copyright 2014 Andrew Stormont.
  */
 
 /*
@@ -106,15 +106,6 @@ static	void		fill_random_bytes(uchar_t *, int);
 static	int		uuid_create(struct uuid *);
 static	void		gen_ethernet_address(uuid_node_t *);
 static	void		revalidate_data(uuid_node_t *);
-
-/*
- * private types
- */
-typedef enum {
-	UUID_CASE_LOWER,
-	UUID_CASE_UPPER,
-	UUID_CASE_EITHER
-} uuid_case_t;
 
 /*
  * Generates a uuid based on version 1 format.
@@ -589,27 +580,15 @@ uuid_clear(uuid_t uu)
  * and stores this value in the character string pointed to by out.
  */
 static void
-uuid_unparse_common(uuid_t uu, char *out, uuid_case_t type)
+uuid_unparse_common(uuid_t uu, char *out, boolean_t upper)
 {
 	struct uuid 	uuid;
 	uint16_t	clock_seq;
 	char		etheraddr[13];
 	int		index = 0, i;
-	boolean_t	upper;
 
 	/* basic sanity checking */
 	if (uu == NULL) {
-		return;
-	}
-
-	switch (type) {
-	case UUID_CASE_UPPER:
-		upper = B_TRUE;
-		break;
-	case UUID_CASE_LOWER:
-		upper = B_FALSE;
-		break;
-	default:
 		return;
 	}
 
@@ -632,13 +611,13 @@ uuid_unparse_common(uuid_t uu, char *out, uuid_case_t type)
 void
 uuid_unparse_upper(uuid_t uu, char *out)
 {
-	uuid_unparse_common(uu, out, UUID_CASE_UPPER);
+	uuid_unparse_common(uu, out, B_TRUE);
 }
 
 void
 uuid_unparse_lower(uuid_t uu, char *out)
 {
-	uuid_unparse_common(uu, out, UUID_CASE_LOWER);
+	uuid_unparse_common(uu, out, B_FALSE);
 }
 
 void
@@ -648,7 +627,7 @@ uuid_unparse(uuid_t uu, char *out)
 	 * Historically uuid_unparse on Solaris returns lower case,
 	 * for compatibility we preserve this behaviour.
 	 */
-	uuid_unparse_common(uu, out, UUID_CASE_LOWER);
+	uuid_unparse_common(uu, out, B_FALSE);
 }
 
 /*
@@ -679,8 +658,8 @@ uuid_is_null(uuid_t uu)
  * Upon successfully parsing the input string, UUID is stored
  * in the location pointed to by uu
  */
-static int
-uuid_parse_common(char *in, uuid_t uu, uuid_case_t type)
+int
+uuid_parse(char *in, uuid_t uu)
 {
 
 	char		*ptr, buf[3];
@@ -703,20 +682,6 @@ uuid_parse_common(char *in, uuid_t uu, uuid_case_t type)
 			if (!isxdigit(*ptr)) {
 				return (-1);
 			}
-			switch (type) {
-			case UUID_CASE_UPPER:
-				if (islower(*ptr))
-					return (-1);
-				break;
-			case UUID_CASE_LOWER:
-				if (isupper(*ptr))
-					return (-1);
-				break;
-			case UUID_CASE_EITHER:
-				break;
-			default:
-				return (-1);
-			}
 		}
 	}
 
@@ -736,28 +701,6 @@ uuid_parse_common(char *in, uuid_t uu, uuid_case_t type)
 	}
 	struct_to_string(uu, &uuid);
 	return (0);
-}
-
-int
-uuid_parse_upper(char *in, uuid_t uu)
-{
-	return (uuid_parse_common(in, uu, UUID_CASE_UPPER));
-}
-
-int
-uuid_parse_lower(char *in, uuid_t uu)
-{
-	return (uuid_parse_common(in, uu, UUID_CASE_LOWER));
-}
-
-int
-uuid_parse(char *in, uuid_t uu)
-{
-	/*
-	 * Historically uuid_parse on Solaris is case agnostic,
-	 * for compatibility we preserve this behaviour.
-	 */
-	return (uuid_parse_common(in, uu, UUID_CASE_EITHER));
 }
 
 /*

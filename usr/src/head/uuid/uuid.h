@@ -25,7 +25,7 @@
  */
 
 /*
- * Copyright (c) 2013 Andrew Stormont.  All rights reserved.
+ * Copyright 2014 Andrew Stormont.
  */
 
 #ifndef	_UUID_H
@@ -72,8 +72,6 @@ extern void uuid_unparse_upper(uuid_t, char *);
 extern int uuid_compare(uuid_t, uuid_t);
 extern int uuid_is_null(uuid_t);
 extern int uuid_parse(char *, uuid_t);
-extern int uuid_parse_lower(char *, uuid_t);
-extern int uuid_parse_upper(char *, uuid_t);
 extern time_t uuid_time(uuid_t, struct timeval *);
 
 #ifdef __cplusplus
